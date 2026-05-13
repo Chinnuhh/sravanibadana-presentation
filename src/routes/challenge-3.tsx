@@ -33,22 +33,44 @@ function Challenge3() {
         </p>
       </Section>
 
-      <Section eyebrow="Phase 1" title="Discovery: three workshops, one shared brief" desc="Two weeks. Outcome: signed-off requirements doc and a data flow diagram everyone agrees with.">
+      <Section eyebrow="Phase 1" title="How I would scope this project (Finance + Corporate Partnerships)" desc="I would start by running structured discovery sessions with both teams separately, then align them together in a joint requirements workshop.">
         <div className="grid md:grid-cols-3 gap-4">
-          <Card kicker="Workshop 01" title="Finance">
-            <p><strong>Who:</strong> Finance Lead, Donor Database Manager.</p>
-            <p><strong>Goals:</strong> How does the payroll file land? Cadence (weekly/monthly), format (CSV/SFTP/API), reconciliation rules, GST treatment, receipting requirements.</p>
-            <p><strong>Output:</strong> Data ingestion spec + receipting compliance checklist.</p>
+          <Card kicker="Step 01" title="Discovery with Corporate Partnerships">
+            <p><strong>Focus:</strong> relationship, expectations, and employee experience.</p>
+            <p>I would clarify:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>What the partner expects employees to receive (thank you, updates, impact stories, certificates, etc.)</li>
+              <li>Frequency of communication (monthly, quarterly, per payroll cycle, annual summary)</li>
+              <li>Brand guidelines and approval requirements</li>
+              <li>Whether messaging is co-branded or fully Orange Sky branded</li>
+              <li>Any sensitivity rules (employee privacy, corporate tone, opt-out handling)</li>
+            </ul>
+            <p><strong>Key outcome:</strong> a clear definition of the employee journey experience and partner expectations.</p>
           </Card>
-          <Card kicker="Workshop 02" title="Corporate Partnerships">
-            <p><strong>Who:</strong> Partnership Manager, Account Lead.</p>
-            <p><strong>Goals:</strong> What did we promise the partner? Reporting cadence, branding, employee comms guidelines, escalation paths, success metrics.</p>
-            <p><strong>Output:</strong> Partner contract summary + reporting wireframe.</p>
+          <Card kicker="Step 02" title="Discovery with Finance Team">
+            <p><strong>Focus:</strong> data accuracy, reconciliation, and reporting integrity.</p>
+            <p>I would clarify:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>How payroll donations are received (batch files, API, manual upload)</li>
+              <li>Data structure available: Employee ID (or anonymised ID), Employer/partner ID, donation amount per payroll cycle, payment frequency, start and end dates</li>
+              <li>Reconciliation process between Finance and CRM</li>
+              <li>Timing delays (T+1 day, weekly, monthly)</li>
+              <li>Reporting requirements for auditing and compliance</li>
+            </ul>
+            <p><strong>Key outcome:</strong> a confirmed data source + donation truth model.</p>
           </Card>
-          <Card kicker="Workshop 03" title="Marketing & Tech">
-            <p><strong>Who:</strong> Lifecycle Lead, SFMC Admin, CRM Owner.</p>
-            <p><strong>Goals:</strong> Where do payroll donors live in our model? Suppression from acquisition journeys, consent status, segmentation.</p>
-            <p><strong>Output:</strong> Data model + journey architecture decisions.</p>
+          <Card kicker="Step 03" title="Joint alignment workshop">
+            <p><strong>Finance + Partnerships + CRM/Marketing.</strong> This is where I lock the scope.</p>
+            <p>We align on:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>"What is a confirmed donation event?"</li>
+              <li>Single source of truth for reporting</li>
+              <li>How often data sync happens into Salesforce Marketing Cloud</li>
+              <li>How employees are identified in SFMC (Contact Key strategy)</li>
+              <li>What counts as a "thank you trigger" event</li>
+              <li>Data privacy and consent rules (important for corporate payroll giving)</li>
+            </ul>
+            <p><strong>Key outcome:</strong> signed-off requirements document + journey triggers.</p>
           </Card>
         </div>
       </Section>
