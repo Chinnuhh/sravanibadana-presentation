@@ -82,8 +82,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Sravani BadanaPresentation" },
       { name: "twitter:description", content: "Donor Growth Journey manages donor lifecycles, re-engaging lapsed donors and segmenting high-value donors." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bb2766fb-c021-40b7-b232-4a55c7c67b6e/id-preview-c37e2e81--8c64b0ae-e6b5-4165-a196-0d03e4559fa1.lovable.app-1778636262033.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bb2766fb-c021-40b7-b232-4a55c7c67b6e/id-preview-c37e2e81--8c64b0ae-e6b5-4165-a196-0d03e4559fa1.lovable.app-1778636262033.png" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6235ef2e-3678-42dd-90f8-dc1afb0965de" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/6235ef2e-3678-42dd-90f8-dc1afb0965de" },
     ],
     links: [
       {
