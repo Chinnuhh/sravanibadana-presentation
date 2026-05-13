@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { ChallengeHero } from "@/components/ChallengeHero";
 import { Section } from "@/components/Section";
+import valuesPoster from "@/assets/orange-sky-values.png";
 
 export const Route = createFileRoute("/challenge-4")({
   head: () => ({
@@ -52,6 +53,15 @@ function Challenge4() {
         </p>
         <p className="text-xs text-muted-foreground/70 mt-4 italic">
           Note: this reflection draws on my reading of the Orange Sky Values. If the panel can share the values picture in the interview, I'd love to revisit anything I've under-emphasised.
+        </p>
+      </Section>
+
+      <Section eyebrow="The source" title="The Orange Sky Values, in their own words">
+        <div className="relative rounded-3xl overflow-hidden border border-black/8 shadow-[0_20px_60px_rgba(0,0,0,0.12)] bg-white rotate-[-0.6deg] hover:rotate-0 transition-transform duration-500">
+          <img src={valuesPoster} alt="Orange Sky Values poster: Believes In What We Do, Walks The Walk, Cultivates Connection, Strives To Improve, Gives Things A Crack, Celebrates Success" className="w-full h-auto block" />
+        </div>
+        <p className="text-xs text-muted-foreground/70 mt-4 italic">
+          Source: Orange Sky Values, as published by the organisation. My reflection below sits against this framing.
         </p>
       </Section>
 
