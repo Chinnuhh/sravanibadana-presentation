@@ -35,11 +35,14 @@ function Index() {
 
         <div className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-3 bg-white rounded-full pl-2 pr-5 py-2 mb-6 shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
-              <span className="bg-primary-light rounded-full p-1.5">
-                <img src={logo} alt="Orange Sky" className="h-6 w-auto" />
+            <div className="flex items-center gap-4 mb-8">
+              <div className="relative">
+                <span className="absolute -inset-3 bg-white/95 rounded-2xl rotate-[-2deg] shadow-[0_18px_40px_rgba(0,0,0,0.18)]" aria-hidden />
+                <img src={logo} alt="Orange Sky Australia" className="relative h-14 md:h-16 w-auto" />
+              </div>
+              <span className="text-[10.5px] font-extrabold tracking-[3px] uppercase text-white/85 leading-tight">
+                Panel<br />Presentation
               </span>
-              <span className="text-[11px] font-extrabold tracking-[2.5px] uppercase text-charcoal">Panel Presentation</span>
             </div>
 
             <p className="text-[11px] font-bold tracking-[3px] uppercase text-white/75 mb-4">Salesforce Marketing Cloud · 2026</p>
