@@ -89,6 +89,19 @@ function Challenge3() {
         <p className="text-sm text-muted-foreground mt-6">This structure ensures both <strong>real-time triggers</strong> (thank you on confirmed donation event) and <strong>batch reporting</strong> (Finance reconciliation + corporate partner reporting) are served from the same source of truth.</p>
       </Section>
 
+      <Section eyebrow="Journey logic" title="Journey logic (high level)" desc="Triggered when a payroll donation is ingested into SFMC.">
+        <div className="grid md:grid-cols-2 gap-4">
+          {[
+            { t: "Immediate thank-you email", d: "Sent after the first confirmed payroll gift — co-branded with the corporate partner." },
+            { t: "Ongoing impact updates", d: "Monthly or quarterly impact stories aligned to the partner's communication cadence." },
+            { t: "Milestone triggers", d: "Recognition at 6 months, 12 months, and continued giving anniversaries." },
+            { t: "Exit logic", d: "Optional graceful exit if employment ends or donations stop — with a final acknowledgement message." },
+          ].map((d) => (
+            <Card key={d.t} title={d.t}>{d.d}</Card>
+          ))}
+        </div>
+      </Section>
+
       <Section eyebrow="Phase 2" title="Key deliverables in the project plan">
         <div className="grid md:grid-cols-2 gap-4">
           {[
