@@ -119,12 +119,12 @@ function Challenge1() {
 
       <Section eyebrow="Objectives" title="What success looks like">
         <div className="grid md:grid-cols-3 gap-5">
-          <Card kicker="Outcome" title="Reduce cancellations">Catch at-risk donors after gift #3 and recover them before churn is locked in.</Card>
-          <Card kicker="Outcome" title="Rebuild emotional connection">Re-anchor donors to the mission with stories, impact metrics and gratitude.</Card>
-          <Card kicker="Outcome" title="Increase donor lifetime value">Offer pause / reduce / re-frequency so the relationship survives a tough month.</Card>
-          <Card kicker="Outcome" title="Identify at-risk donors earlier">Move from reactive saves to a predictive donor health score.</Card>
-          <Card kicker="Outcome" title="Personalise the experience">Use behaviour, channel preference and reason-for-leaving to tailor every touch.</Card>
-          <Card kicker="Outcome" title="Protect long-term brand trust">Even cancellations exit gracefully, preserving future re-engagement.</Card>
+          <Card title="Reduce cancellations">Catch at-risk donors after gift #3 and recover them before churn is locked in.</Card>
+          <Card title="Rebuild emotional connection">Re-anchor donors to the mission with stories, impact metrics and gratitude.</Card>
+          <Card title="Increase donor lifetime value">Offer pause / reduce / re-frequency so the relationship survives a tough month.</Card>
+          <Card title="Identify at-risk donors earlier">Move from reactive saves to a predictive donor health score.</Card>
+          <Card title="Personalise the experience">Use behaviour, channel preference and reason-for-leaving to tailor every touch.</Card>
+          <Card title="Protect long-term brand trust">Even cancellations exit gracefully, preserving future re-engagement.</Card>
         </div>
       </Section>
 
