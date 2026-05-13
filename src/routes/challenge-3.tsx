@@ -47,7 +47,7 @@ function Challenge3() {
             </ul>
             <p><strong>Key outcome:</strong> a clear definition of the employee journey experience and partner expectations.</p>
           </Card>
-          <Card kicker="Step 02" title="Discovery with Finance Team">
+          <Card kicker="Step" title="Discovery with Finance Team">
             <p><strong>Focus:</strong> data accuracy, reconciliation, and reporting integrity.</p>
             <p>I would clarify:</p>
             <ul className="list-disc pl-5 space-y-1">
