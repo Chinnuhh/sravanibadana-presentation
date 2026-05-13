@@ -33,7 +33,7 @@ function Challenge3() {
         </p>
       </Section>
 
-      <Section eyebrow="Phase 1" title="How I would scope this project (Finance + Corporate Partnerships)" desc="I would start by running structured discovery sessions with both teams separately, then align them together in a joint requirements workshop.">
+      <Section eyebrow="Scoping" title="How I would scope this project (Finance + Corporate Partnerships)" desc="I would start by running structured discovery sessions with both teams separately, then align them together in a joint requirements workshop.">
         <div className="grid md:grid-cols-3 gap-4">
           <Card kicker="Step 01" title="Discovery with Corporate Partnerships">
             <p><strong>Focus:</strong> relationship, expectations, and employee experience.</p>
