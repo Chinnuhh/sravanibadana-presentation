@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { ChallengeHero } from "@/components/ChallengeHero";
 import { Section, Card } from "@/components/Section";
+import journeyImage from "@/assets/challenge-2-journey.png";
 
 export const Route = createFileRoute("/challenge-2")({
   head: () => ({
@@ -57,6 +58,17 @@ function Challenge2() {
             </tbody>
           </table>
         </div>
+      </Section>
+
+      <Section eyebrow="Reference build" title="Journey Builder mock-up of the $1,000 Gift Escalation Journey" desc="The Decision Split on LastGiftAmount >= 1000 routes major gifts into the Mid-Value call queue and out of the SMS lifecycle.">
+        <figure className="rounded-xl border border-black/8 bg-white overflow-hidden shadow-sm">
+          <img
+            src={journeyImage}
+            alt="Salesforce Marketing Cloud Journey Builder showing a $1,000 Gift Escalation Journey with a Decision Split on LastGiftAmount, a Yes branch updating the contact and adding them to the Mid-Value call queue, and a No branch continuing the SMS lifecycle."
+            className="w-full h-auto block"
+            loading="lazy"
+          />
+        </figure>
       </Section>
 
       <Section eyebrow="The flow" title="How the dynamic path change works inside Journey Builder">
