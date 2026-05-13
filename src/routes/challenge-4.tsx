@@ -62,7 +62,7 @@ function Challenge4() {
 
       <Section eyebrow="The source" title="The Orange Sky Values, in their own words">
         <div className="relative rounded-3xl overflow-hidden border border-black/8 shadow-[0_20px_60px_rgba(0,0,0,0.12)] bg-white rotate-[-0.6deg] hover:rotate-0 transition-transform duration-500">
-          <img src={valuesPoster} alt="Orange Sky Values poster: Believes In What We Do, Walks The Walk, Cultivates Connection, Strives To Improve, Gives Things A Crack, Celebrates Success" className="w-full h-auto block" / loading="lazy" decoding="async" />
+          <img src={valuesPoster} alt="Orange Sky Values poster: Believes In What We Do, Walks The Walk, Cultivates Connection, Strives To Improve, Gives Things A Crack, Celebrates Success" className="w-full h-auto block" loading="lazy" decoding="async" />
         </div>
         <p className="text-xs text-muted-foreground/70 mt-4 italic">
           Source: Orange Sky Values, as published by the organisation. My reflection below sits against this framing.
