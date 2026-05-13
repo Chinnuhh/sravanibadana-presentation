@@ -59,7 +59,7 @@ function Challenge3() {
             </ul>
             <p><strong>Key outcome:</strong> a confirmed data source + donation truth model.</p>
           </Card>
-          <Card kicker="Step 03" title="Joint alignment workshop">
+          <Card kicker="Step" title="Joint alignment workshop">
             <p><strong>Finance + Partnerships + CRM/Marketing.</strong> This is where I lock the scope.</p>
             <p>We align on:</p>
             <ul className="list-disc pl-5 space-y-1">
