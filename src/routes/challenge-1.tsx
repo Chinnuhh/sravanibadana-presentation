@@ -149,7 +149,7 @@ function Challenge1() {
         </ol>
       </Section>
 
-      <Section eyebrow="The save journey, at a glance" title="Cancellation risk spikes after the third gift" desc="The honeymoon is over and the donor is asking, 'is this still worth it?'. The save journey has to answer that question with story, gratitude and a frictionless way to stay.">
+      <Section eyebrow="The save journey, at a glance" title="Cancellation risk spikes after the third gift" desc="Cancellation risk often increases after the third gift, when the initial emotional momentum starts to fade. At this point, the question in a supporter's mind is often simple: 'Is this still making a difference?' This journey is designed to respond to that moment with gratitude, clarity, and flexibility, not pressure.">
         <ol className="relative border-l-2 border-primary/30 ml-3 space-y-6">
           {[
             {
