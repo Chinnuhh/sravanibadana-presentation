@@ -46,12 +46,12 @@ function Index() {
             </div>
 
             <p className="text-[11px] font-bold tracking-[3px] uppercase text-white/75 mb-4">Salesforce Marketing Cloud · 2026</p>
-            <h1 className="font-display font-black text-5xl md:text-7xl leading-[0.98]">
+            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-7xl leading-[1.02]">
               Presented by
               <span className="block mt-3">
-                <span className="relative inline-block">
-                  <span className="absolute -inset-x-3 inset-y-2 bg-periwinkle -rotate-1 rounded-lg" aria-hidden />
-                  <span className="relative text-charcoal px-3">Sravani Badana</span>
+                <span className="relative inline-block max-w-full">
+                  <span className="absolute -inset-x-2 inset-y-2 bg-periwinkle -rotate-1 rounded-lg" aria-hidden />
+                  <span className="relative text-charcoal px-2 break-words">Sravani Badana</span>
                 </span>
               </span>
             </h1>
