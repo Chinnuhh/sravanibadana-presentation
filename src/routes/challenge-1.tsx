@@ -98,6 +98,8 @@ function Challenge1() {
         number="01"
         title="A multi-channel save journey for regular givers showing cancellation intent after the third gift"
         subtitle="Email, SMS and phone, sequenced through behavioural triggers and progressive escalation, built on a clean SFMC data model and powered by Journey Builder + Automation Studio."
+        sticker={vanSticker}
+        stickerAlt="Orange Sky van with washing machine icon"
       />
 
       <Section eyebrow="Why this journey exists" title="The third-gift cliff is an emotional one, not a transactional one">
