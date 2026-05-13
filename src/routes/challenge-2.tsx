@@ -204,10 +204,10 @@ WHERE d.GiftAmount >= 1000`}
       <Section dark eyebrow="Step 4 · High value path" title="Four activities, in this exact order">
         <ol className="space-y-4 max-w-3xl">
           {[
-            { t: "4.1 · Update Contact / Data Extension Update", d: "Set MidValueFlag = 1 and SMS_Eligible = 0 on Donor_Master_DE. This is what stops every future SMS send." },
-            { t: "4.2 · Data Extension Entry Activity → MidValue_Call_Queue_DE", d: "Inserts the row that becomes the phone task. ContactID is the PK so duplicate $1k gifts can't create duplicate tasks." },
-            { t: "4.3 · Send Email, internal alert to the Mid-Value team", d: "Includes Name, Phone, GiftAmount, GiftDate. Triggers immediate human action, a second channel in case the queue isn't being watched." },
-            { t: "4.4 · Exit Criteria / End Journey activity", d: "Hard exit so the lifecycle automation can never speak to this donor again from inside this journey." },
+            { t: "Update Contact / Data Extension Update", d: "Set MidValueFlag = 1 and SMS_Eligible = 0 on Donor_Master_DE. This is what stops every future SMS send." },
+            { t: "Data Extension Entry Activity → MidValue_Call_Queue_DE", d: "Inserts the row that becomes the phone task. ContactID is the PK so duplicate $1k gifts can't create duplicate tasks." },
+            { t: "Send Email, internal alert to the Mid-Value team", d: "Includes Name, Phone, GiftAmount, GiftDate. Triggers immediate human action, a second channel in case the queue isn't being watched." },
+            { t: "Exit Criteria / End Journey activity", d: "Hard exit so the lifecycle automation can never speak to this donor again from inside this journey." },
           ].map((s) => (
             <li key={s.t} className="rounded-xl border border-white/15 bg-white/5 p-5">
               <h3 className="font-display font-extrabold text-white mb-1">{s.t}</h3>
