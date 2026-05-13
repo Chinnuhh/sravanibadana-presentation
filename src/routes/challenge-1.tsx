@@ -3,6 +3,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { ChallengeHero } from "@/components/ChallengeHero";
 import { Section, Card } from "@/components/Section";
 import journeyImage from "@/assets/challenge-1-journey.png";
+import vanSticker from "@/assets/orange-sky-van-sticker.png";
 
 export const Route = createFileRoute("/challenge-1")({
   head: () => ({
@@ -97,6 +98,8 @@ function Challenge1() {
         number="01"
         title="A multi-channel save journey for regular givers showing cancellation intent after the third gift"
         subtitle="Email, SMS and phone, sequenced through behavioural triggers and progressive escalation, built on a clean SFMC data model and powered by Journey Builder + Automation Studio."
+        sticker={vanSticker}
+        stickerAlt="Orange Sky van with washing machine icon"
       />
 
       <Section eyebrow="Why this journey exists" title="The third-gift cliff is an emotional one, not a transactional one">

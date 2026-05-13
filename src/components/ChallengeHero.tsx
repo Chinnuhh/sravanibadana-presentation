@@ -3,9 +3,11 @@ interface Props {
   title: string;
   subtitle: string;
   kicker: string;
+  sticker?: string;
+  stickerAlt?: string;
 }
 
-export function ChallengeHero({ number, title, subtitle, kicker }: Props) {
+export function ChallengeHero({ number, title, subtitle, kicker, sticker, stickerAlt }: Props) {
   return (
     <section className="relative overflow-hidden bg-primary text-white px-6 md:px-[8vw] py-24 md:py-32">
       <div className="absolute inset-0 pointer-events-none">
@@ -13,6 +15,13 @@ export function ChallengeHero({ number, title, subtitle, kicker }: Props) {
         <span className="absolute rounded-full border border-white/15" style={{ width: 320, height: 320, top: -60, right: 120 }} />
         <span className="absolute rounded-full border border-white/10" style={{ width: 700, height: 700, bottom: -300, right: -200 }} />
       </div>
+      {sticker && (
+        <img
+          src={sticker}
+          alt={stickerAlt ?? ""}
+          className="hidden md:block absolute right-[6vw] top-1/2 -translate-y-1/2 w-[280px] lg:w-[340px] xl:w-[400px] rotate-[-8deg] drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)] pointer-events-none animate-float"
+        />
+      )}
       <p className="relative text-[11px] font-semibold tracking-[3px] uppercase text-white/70 mb-6">{kicker}</p>
       <div className="relative flex items-baseline gap-6 mb-4 flex-wrap">
         <span className="font-display font-black text-white/30 text-[5rem] leading-none">{number}</span>
