@@ -174,7 +174,7 @@ function Challenge1() {
               when: "Day 4",
               channel: "Email",
               title: "Offer choice",
-              body: "'Make it work for you', pause for 1, 2 or 3 months, lower amount, switch frequency, or keep going. Single-click options. No guilt.",
+              body: "A flexible set of options that lets supporters pause, reduce, or adjust their giving in a way that fits their situation, without guilt or friction.",
             },
             {
               when: "Day 6 to 7",
