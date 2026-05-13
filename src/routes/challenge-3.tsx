@@ -33,7 +33,7 @@ function Challenge3() {
         </p>
       </Section>
 
-      <Section eyebrow="Phase 1" title="How I would scope this project (Finance + Corporate Partnerships)" desc="I would start by running structured discovery sessions with both teams separately, then align them together in a joint requirements workshop.">
+      <Section eyebrow="Scoping" title="How I would scope this project (Finance + Corporate Partnerships)" desc="I would start by running structured discovery sessions with both teams separately, then align them together in a joint requirements workshop.">
         <div className="grid md:grid-cols-3 gap-4">
           <Card kicker="Step 01" title="Discovery with Corporate Partnerships">
             <p><strong>Focus:</strong> relationship, expectations, and employee experience.</p>
@@ -123,19 +123,21 @@ function Challenge3() {
         </div>
       </Section>
 
-      <Section eyebrow="Phase 2" title="Key deliverables in the project plan">
+      <Section eyebrow="Project plan" title="Key deliverables">
         <div className="grid md:grid-cols-2 gap-4">
           {[
-            { t: "Requirements & Scope Doc", d: "One source of truth covering business goals, success metrics, in-scope / out-of-scope, dependencies, RACI." },
-            { t: "Data Flow Diagram", d: "End-to-end: payroll file → Finance reconciliation → CRM → SFMC Data Extension → Journey. Includes refresh frequency and ownership at each step." },
-            { t: "Donor Experience Map", d: "Welcome → first thank-you → quarterly impact report → annual statement → milestone celebrations. Mapped against employee tenure with the partner." },
-            { t: "Email Templates & Approvals", d: "Co-branded templates (Orange Sky + partner logo) with sign-off workflow from both sides. Includes CAN-SPAM / Spam Act unsubscribe handling for B2B context." },
-            { t: "Automated Partner Reporting", d: "Monthly + quarterly dashboards: $ raised, # employees giving, retention rate, impact metrics. Delivered via Datorama / Tableau / scheduled email." },
-            { t: "Test Plan & UAT Scripts", d: "Test data extension with seeded edge cases (new joiner, leaver, amount change, opt-out). UAT signed off by Partnership Manager + Finance Lead." },
-            { t: "Launch Runbook", d: "Go-live checklist, comms cascade to the partner's employees, monitoring window, rollback plan." },
-            { t: "Post-launch Review (30/60/90)", d: "Performance against the success metrics, partner satisfaction check-in, optimisation backlog." },
+            { k: "01", t: "Requirements & Scope", items: ["Business goals & success metrics", "Stakeholder alignment", "Ownership & governance"] },
+            { k: "02", t: "Data & Integration Design", items: ["Payroll → CRM → SFMC data flow", "Validation & reconciliation rules", "Data Extensions & automation setup"] },
+            { k: "03", t: "Donor Journey Design", items: ["Welcome & thank-you journey", "Impact & milestone communications", "Re-engagement logic"] },
+            { k: "04", t: "Reporting & Dashboards", items: ["Finance reconciliation reporting", "Partner impact dashboards", "Automated scheduled reports"] },
+            { k: "05", t: "Testing & Launch", items: ["UAT & edge-case testing", "Go-live runbook", "Monitoring & optimisation plan"] },
+            { k: "06", t: "Post-Launch Review", items: ["30/60/90-day performance review", "Retention & engagement analysis", "Optimisation backlog"] },
           ].map((d) => (
-            <Card key={d.t} title={d.t}>{d.d}</Card>
+            <Card key={d.t} kicker={d.k} title={d.t}>
+              <ul className="list-disc pl-5 space-y-1">
+                {d.items.map((i) => <li key={i}>{i}</li>)}
+              </ul>
+            </Card>
           ))}
         </div>
       </Section>
