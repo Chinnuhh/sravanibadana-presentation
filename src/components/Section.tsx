@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export function Section({ eyebrow, title, desc, children, dark }: { eyebrow?: string; title: string; desc?: string; children: ReactNode; dark?: boolean }) {
   return (
     <section className={dark ? "bg-charcoal text-white" : ""}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-16 md:py-20 border-t border-black/5 first:border-t-0">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-[8vw] py-12 sm:py-16 md:py-20 border-t border-black/5 first:border-t-0">
         {eyebrow && <p className={`text-[13.5px] font-bold tracking-[3px] uppercase mb-2 ${dark ? "text-primary" : "text-primary"}`}>{eyebrow}</p>}
         <h2 className="font-display font-black text-2xl md:text-3xl mb-2">{title}</h2>
         {desc && <p className={`text-sm max-w-xl mb-8 ${dark ? "text-white/55" : "text-muted-foreground"}`}>{desc}</p>}
