@@ -1,8 +1,18 @@
 @import "tailwindcss" source(none);
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap');
 @source "../src";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-primary-mid: var(--primary-mid);
+  --color-charcoal: var(--charcoal);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
 
 /*
  * Design system definition.
