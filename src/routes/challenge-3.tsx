@@ -142,7 +142,7 @@ function Challenge3() {
         </div>
       </Section>
 
-      <Section dark eyebrow="Risk register" title="Three risks I'd flag at kick-off">
+      <Section dark eyebrow="Risk register" title="Risks I'd flag at kick-off">
         <div className="grid md:grid-cols-3 gap-4 text-sm">
           {[
             { t: "Data quality from payroll", d: "Files often arrive with inconsistent employee IDs or missing emails. Mitigation: agree a strict file spec + automated validation step before ingestion." },
