@@ -50,8 +50,8 @@ function Index() {
               Presented by
               <span className="block mt-3">
                 <span className="relative inline-block">
-                  <span className="absolute -inset-x-3 inset-y-2 bg-charcoal/90 -rotate-1 rounded-lg" aria-hidden />
-                  <span className="relative text-white px-3">Sravani Badana</span>
+                  <span className="absolute -inset-x-3 inset-y-2 bg-periwinkle -rotate-1 rounded-lg" aria-hidden />
+                  <span className="relative text-charcoal px-3">Sravani Badana</span>
                 </span>
               </span>
             </h1>
