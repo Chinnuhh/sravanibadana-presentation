@@ -99,18 +99,36 @@ function Challenge4() {
         </p>
       </Section>
 
-      <section className="bg-primary text-white relative overflow-hidden">
-        <div className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute -bottom-32 -right-10 w-[28rem] h-[28rem] rounded-full bg-charcoal/20 blur-3xl" />
+      <section className="bg-charcoal text-white relative overflow-hidden">
+        {/* soft glows */}
+        <div className="absolute -top-32 -left-20 w-[32rem] h-[32rem] rounded-full bg-primary/30 blur-3xl" />
+        <div className="absolute -bottom-40 -right-20 w-[34rem] h-[34rem] rounded-full bg-primary/20 blur-3xl" />
+
+        {/* playful stickers */}
+        <div className="hidden md:flex absolute top-16 right-[12%] -rotate-12 bg-primary text-white font-display font-black text-sm uppercase tracking-widest px-4 py-2 rounded-full shadow-[0_8px_30px_rgba(249,106,0,0.5)] border-2 border-white/20">
+          ☕ keep chatting
+        </div>
+        <div className="hidden md:flex absolute top-40 left-[8%] rotate-6 bg-white text-charcoal font-display font-black text-sm uppercase tracking-widest px-4 py-2 rounded-full shadow-xl">
+          🧡 with care
+        </div>
+        <div className="hidden md:flex absolute bottom-32 left-[14%] -rotate-6 bg-white/10 backdrop-blur text-white font-display font-extrabold text-xs uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-white/30">
+          ✨ positive impact
+        </div>
+        <div className="hidden md:flex absolute bottom-20 right-[10%] rotate-12 items-center gap-2 bg-primary text-white font-display font-black text-sm uppercase tracking-widest px-4 py-2 rounded-full shadow-[0_8px_30px_rgba(249,106,0,0.5)] border-2 border-white/20">
+          🚿 stay orange
+        </div>
+        {/* dotted accent */}
+        <div className="absolute top-1/2 right-8 w-32 h-32 rounded-full border-2 border-dashed border-primary/40 hidden lg:block" />
+
         <div className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-24 md:py-32 relative">
           <p className="font-display font-black text-[15vw] md:text-[10rem] leading-[0.85] tracking-tight">
             Thank<br />you.
           </p>
           <p className="font-display font-extrabold text-3xl md:text-5xl mt-10 max-w-3xl leading-tight">
-            Better for being <span className="italic underline decoration-white/40 decoration-4 underline-offset-8">Orange</span>. 🧡
+            Better for being <span className="italic underline decoration-primary decoration-4 underline-offset-8 text-primary">Orange</span>. 🧡
           </p>
-          <p className="text-lg md:text-xl mt-10 max-w-2xl text-white/90 leading-relaxed">
-            Thanks for the time, <strong className="font-black">Tenille</strong>, <strong className="font-black">Kasey</strong> &amp; <strong className="font-black">Chanel</strong>. Happy to dig into any of these answers.
+          <p className="text-lg md:text-xl mt-10 max-w-2xl text-white/80 leading-relaxed">
+            Thanks for the time, <strong className="font-black text-primary">Tenille</strong>, <strong className="font-black text-primary">Kasey</strong> &amp; <strong className="font-black text-primary">Chanel</strong>. Happy to dig into any of these answers.
           </p>
         </div>
       </section>
