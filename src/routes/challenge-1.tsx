@@ -103,7 +103,7 @@ function Challenge1() {
       />
 
       <Section eyebrow="Why this journey exists" title="The third-gift cliff is an emotional one, not a transactional one">
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
+        <div className="max-w-3xl space-y-5">
           <p className="text-base text-muted-foreground leading-relaxed">
             Our data shows cancellations spike after the third regular gift. That pattern usually points to three things: a
             <strong className="text-charcoal"> drop in emotional connection</strong>, a
