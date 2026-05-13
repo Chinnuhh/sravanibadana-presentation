@@ -156,7 +156,7 @@ function Challenge1() {
               when: "Day 0",
               channel: "Trigger",
               title: "Listen",
-              body: "Cancellation submitted (or 3rd gift posted + risk score high). Suppress all marketing. Tag donor as 'Save Journey, Active'.",
+              body: "A cancellation signal or risk behaviour after the third gift. Supporters are identified and other communications are paused so the experience feels focused and intentional.",
             },
             {
               when: "Day 0 to 1",
