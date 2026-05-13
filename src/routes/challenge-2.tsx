@@ -201,21 +201,25 @@ WHERE d.GiftAmount >= 1000`}
         </div>
       </Section>
 
-      <Section dark eyebrow="Step 4 · High value path" title="Activities, in this exact order">
-        <ol className="space-y-4 max-w-3xl">
-          {[
-            { t: "Update Contact / Data Extension Update", d: "Set MidValueFlag = 1 and SMS_Eligible = 0 on Donor_Master_DE. This is what stops every future SMS send." },
-            { t: "Data Extension Entry Activity → MidValue_Call_Queue_DE", d: "Inserts the row that becomes the phone task. ContactID is the PK so duplicate $1k gifts can't create duplicate tasks." },
-            { t: "Send Email, internal alert to the Mid-Value team", d: "Includes Name, Phone, GiftAmount, GiftDate. Triggers immediate human action, a second channel in case the queue isn't being watched." },
-            { t: "Exit Criteria / End Journey activity", d: "Hard exit so the lifecycle automation can never speak to this donor again from inside this journey." },
-          ].map((s) => (
-            <li key={s.t} className="rounded-xl border border-white/15 bg-white/5 p-5">
-              <h3 className="font-display font-extrabold text-white mb-1">{s.t}</h3>
-              <p className="text-sm text-white/75 leading-relaxed">{s.d}</p>
-            </li>
-          ))}
-        </ol>
-      </Section>
+      <section className="bg-periwinkle text-charcoal">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-[8vw] py-12 sm:py-16 md:py-20 border-t border-black/5">
+          <p className="text-[13.5px] font-bold tracking-[3px] uppercase mb-2 text-primary">Step 4 · High value path</p>
+          <h2 className="font-display font-black text-2xl md:text-3xl mb-8">Activities, in this exact order</h2>
+          <ol className="space-y-4 max-w-3xl">
+            {[
+              { t: "Update Contact / Data Extension Update", d: "Set MidValueFlag = 1 and SMS_Eligible = 0 on Donor_Master_DE. This is what stops every future SMS send." },
+              { t: "Data Extension Entry Activity → MidValue_Call_Queue_DE", d: "Inserts the row that becomes the phone task. ContactID is the PK so duplicate $1k gifts can't create duplicate tasks." },
+              { t: "Send Email, internal alert to the Mid-Value team", d: "Includes Name, Phone, GiftAmount, GiftDate. Triggers immediate human action, a second channel in case the queue isn't being watched." },
+              { t: "Exit Criteria / End Journey activity", d: "Hard exit so the lifecycle automation can never speak to this donor again from inside this journey." },
+            ].map((s) => (
+              <li key={s.t} className="rounded-xl border border-primary/40 bg-white/70 backdrop-blur p-5">
+                <h3 className="font-display font-extrabold text-charcoal mb-1">{s.t}</h3>
+                <p className="text-sm text-charcoal/75 leading-relaxed">{s.d}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
 
       <Section eyebrow="Step 5 · Low value path" title="Donors under $1,000 stay in the lifecycle">
         <Card kicker="Standard SMS lifecycle" title="Thank you → Impact story → Engagement nudge → Upgrade prompt">
