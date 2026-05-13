@@ -118,7 +118,7 @@ function Challenge4() {
             Better for being <span className="italic underline decoration-primary decoration-4 underline-offset-8 text-primary">Orange</span> 🧡
           </p>
           <p className="text-lg md:text-xl mt-10 mx-auto max-w-2xl text-charcoal/80 leading-relaxed">
-            Thanks for the time, <strong className="font-black text-primary">Tenille</strong>, <strong className="font-black text-primary">Kasey</strong> &amp; <strong className="font-black text-primary">Chanel</strong>. Happy to dig into any of these answers.
+            Thanks for the time, <strong className="font-black text-primary">Tenille</strong>, <strong className="font-black text-primary">Kasey</strong> &amp; <strong className="font-black text-primary">Chanel</strong>. Happy to dig into any of these answers
           </p>
         </div>
       </section>
