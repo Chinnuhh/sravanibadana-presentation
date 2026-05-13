@@ -230,7 +230,7 @@ function Challenge1() {
             <FieldTable rows={masterFields} />
           </div>
           <div>
-            <h3 className="font-display font-extrabold text-base mb-3">2. At_Risk_Donor_DE, journey entry source</h3>
+            <h3 className="font-display font-extrabold text-base mb-3">At_Risk_Donor_DE, journey entry source</h3>
             <FieldTable rows={atRiskFields} />
           </div>
           <div>
