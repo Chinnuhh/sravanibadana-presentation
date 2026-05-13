@@ -226,7 +226,7 @@ function Challenge1() {
       <Section eyebrow="Step 1 · Data foundation" title="Data Extensions do all the work" desc="Everything in SFMC starts with the data model. Get this right and Journey Builder becomes simple orchestration on top.">
         <div className="space-y-8">
           <div>
-            <h3 className="font-display font-extrabold text-base mb-3">1. Donor_Master_DE, single source of truth</h3>
+            <h3 className="font-display font-extrabold text-base mb-3">Donor_Master_DE, single source of truth</h3>
             <FieldTable rows={masterFields} />
           </div>
           <div>
