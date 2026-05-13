@@ -99,18 +99,53 @@ function Challenge4() {
         </p>
       </Section>
 
-      <section className="bg-primary text-white relative overflow-hidden">
-        <div className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute -bottom-32 -right-10 w-[28rem] h-[28rem] rounded-full bg-charcoal/20 blur-3xl" />
+      <section className="relative overflow-hidden bg-[oklch(0.97_0.02_75)] text-charcoal">
+        {/* soft background blobs */}
+        <div className="absolute -top-24 -left-24 w-[26rem] h-[26rem] rounded-full bg-primary/15 blur-3xl" />
+        <div className="absolute top-1/3 -right-24 w-[22rem] h-[22rem] rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-32 left-1/3 w-[28rem] h-[28rem] rounded-full bg-charcoal/5 blur-3xl" />
+
+        {/* dotted grid */}
+        <div
+          className="absolute inset-0 opacity-[0.18] pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(circle, oklch(0.65 0.18 50) 1px, transparent 1px)",
+            backgroundSize: "26px 26px",
+          }}
+        />
+
+        {/* playful stickers */}
+        <div className="absolute top-10 right-[8%] w-28 h-28 rounded-full bg-primary text-white font-display font-black text-sm flex items-center justify-center rotate-[14deg] shadow-[0_12px_32px_rgba(249,106,0,0.35)] hidden md:flex">
+          <span className="text-center leading-tight">STAY<br />ORANGE</span>
+        </div>
+        <div className="absolute bottom-16 left-[6%] w-24 h-24 rounded-2xl bg-white border-2 border-primary text-primary font-display font-black text-3xl flex items-center justify-center -rotate-[10deg] shadow-[0_10px_28px_rgba(0,0,0,0.08)] hidden md:flex">
+          🧡
+        </div>
+        <div className="absolute top-[42%] left-[4%] px-4 py-2 rounded-full bg-charcoal text-white text-xs font-bold tracking-[2px] uppercase rotate-[-6deg] hidden lg:block">
+          high-five ✋
+        </div>
+        <div className="absolute bottom-24 right-[10%] px-4 py-2 rounded-full bg-white border border-charcoal/10 text-charcoal text-xs font-bold tracking-[2px] uppercase rotate-[8deg] hidden lg:block">
+          ✨ good vibes
+        </div>
+
         <div className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-24 md:py-32 relative">
-          <p className="font-display font-black text-[15vw] md:text-[10rem] leading-[0.85] tracking-tight">
-            Thank<br />you.
+          <p className="font-display font-black text-[15vw] md:text-[10rem] leading-[0.85] tracking-tight text-charcoal">
+            Thank<br />
+            <span className="text-primary">you.</span>
           </p>
           <p className="font-display font-extrabold text-3xl md:text-5xl mt-10 max-w-3xl leading-tight">
-            Better for being <span className="italic underline decoration-white/40 decoration-4 underline-offset-8">Orange</span>. 🧡
+            Better for being{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10 text-primary">Orange</span>
+              <span className="absolute left-0 right-0 bottom-1 h-3 bg-primary/25 -z-0 rounded-sm" />
+            </span>
+            . 🧡
           </p>
-          <p className="text-lg md:text-xl mt-10 max-w-2xl text-white/90 leading-relaxed">
-            Thanks for the time, <strong className="font-black">Tenille</strong>, <strong className="font-black">Kasey</strong> &amp; <strong className="font-black">Chanel</strong>. Happy to dig into any of these answers.
+          <p className="text-lg md:text-xl mt-10 max-w-2xl text-charcoal/75 leading-relaxed">
+            Thanks for the time,{" "}
+            <strong className="font-black text-primary">Tenille</strong>,{" "}
+            <strong className="font-black text-primary">Kasey</strong> &amp;{" "}
+            <strong className="font-black text-primary">Chanel</strong>. Happy to dig into any of these answers.
           </p>
         </div>
       </section>
