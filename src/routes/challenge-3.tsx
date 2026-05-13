@@ -142,20 +142,24 @@ function Challenge3() {
         </div>
       </Section>
 
-      <Section dark eyebrow="Risk register" title="Risks I'd flag at kick-off">
-        <div className="grid md:grid-cols-3 gap-4 text-sm">
-          {[
-            { t: "Data quality from payroll", d: "Files often arrive with inconsistent employee IDs or missing emails. Mitigation: agree a strict file spec + automated validation step before ingestion." },
-            { t: "Brand approval bottleneck", d: "Two brand teams = two approval cycles. Mitigation: agree templates upfront and lock them; use merge fields for variable content." },
-            { t: "Privacy & consent", d: "Employees may not have opted into Orange Sky marketing, only into payroll giving. Mitigation: separate consent flag; transactional comms only unless explicit opt-in." },
-          ].map((r) => (
-            <div key={r.t} className="rounded-xl border border-primary/40 bg-white/5 p-5">
-              <h4 className="font-display font-extrabold text-primary mb-2">{r.t}</h4>
-              <p className="text-white/70 leading-relaxed">{r.d}</p>
-            </div>
-          ))}
+      <section className="bg-periwinkle text-charcoal">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-[8vw] py-12 sm:py-16 md:py-20 border-t border-black/5">
+          <p className="text-[13.5px] font-bold tracking-[3px] uppercase mb-2 text-primary">Risk register</p>
+          <h2 className="font-display font-black text-2xl md:text-3xl mb-8">Risks I'd flag at kick-off</h2>
+          <div className="grid md:grid-cols-3 gap-4 text-sm">
+            {[
+              { t: "Data quality from payroll", d: "Files often arrive with inconsistent employee IDs or missing emails. Mitigation: agree a strict file spec + automated validation step before ingestion." },
+              { t: "Brand approval bottleneck", d: "Two brand teams = two approval cycles. Mitigation: agree templates upfront and lock them; use merge fields for variable content." },
+              { t: "Privacy & consent", d: "Employees may not have opted into Orange Sky marketing, only into payroll giving. Mitigation: separate consent flag; transactional comms only unless explicit opt-in." },
+            ].map((r) => (
+              <div key={r.t} className="rounded-xl border border-primary/40 bg-white/70 backdrop-blur p-5">
+                <h4 className="font-display font-extrabold text-primary mb-2">{r.t}</h4>
+                <p className="text-charcoal/75 leading-relaxed">{r.d}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
 
       <SiteFooter />
     </div>
