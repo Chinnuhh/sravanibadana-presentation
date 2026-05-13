@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { ChallengeHero } from "@/components/ChallengeHero";
 import { Section } from "@/components/Section";
-import valuesPoster from "@/assets/orange-sky-values.png";
-import vanSticker from "@/assets/orange-sky-van-sticker.png";
+import valuesPoster from "@/assets/orange-sky-values.webp";
+import vanSticker from "@/assets/orange-sky-van-sticker.webp";
 
 export const Route = createFileRoute("/challenge-4")({
   head: () => ({

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
-import logo from "@/assets/orange-sky-logo.png";
-import team from "@/assets/orange-sky-team.png";
+import logo from "@/assets/orange-sky-logo.webp";
+import team from "@/assets/orange-sky-team.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({

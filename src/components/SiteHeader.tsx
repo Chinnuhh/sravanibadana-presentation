@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/orange-sky-logo.png";
+import logo from "@/assets/orange-sky-logo.webp";
 
 export function SiteHeader() {
   const links = [
