@@ -250,21 +250,25 @@ WHERE d.GiftAmount >= 1000`}
         </Card>
       </Section>
 
-      <Section dark eyebrow="Test cases" title="What I'd run before go-live">
-        <div className="grid md:grid-cols-2 gap-4">
-          {[
-            { case: "Case 1 · Gift = $50", expected: "Stays in SMS journey. No flag, no queue row." },
-            { case: "Case 2 · Gift = $999", expected: "Stays in SMS journey. Boundary check, exclusive of $1,000." },
-            { case: "Case 3 · Gift = $1,000", expected: "Exits SMS, MidValueFlag = 1, queue row created, team notified." },
-            { case: "Case 4 · Two $1,000 gifts same day", expected: "Exactly one queue row. Update via PK on ContactID, no duplicate phone task." },
-          ].map((c) => (
-            <div key={c.case} className="rounded-xl border border-primary/40 bg-primary/10 p-5">
-              <p className="font-display font-extrabold text-white mb-1">{c.case}</p>
-              <p className="text-sm text-white/80">{c.expected}</p>
-            </div>
-          ))}
+      <section className="bg-periwinkle text-charcoal">
+        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-[8vw] py-12 sm:py-16 md:py-20 border-t border-black/5">
+          <p className="text-[13.5px] font-bold tracking-[3px] uppercase mb-2 text-primary">Test cases</p>
+          <h2 className="font-display font-black text-2xl md:text-3xl mb-8">What I'd run before go-live</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              { case: "Case 1 · Gift = $50", expected: "Stays in SMS journey. No flag, no queue row." },
+              { case: "Case 2 · Gift = $999", expected: "Stays in SMS journey. Boundary check, exclusive of $1,000." },
+              { case: "Case 3 · Gift = $1,000", expected: "Exits SMS, MidValueFlag = 1, queue row created, team notified." },
+              { case: "Case 4 · Two $1,000 gifts same day", expected: "Exactly one queue row. Update via PK on ContactID, no duplicate phone task." },
+            ].map((c) => (
+              <div key={c.case} className="rounded-xl border border-primary/40 bg-white/70 backdrop-blur p-5">
+                <p className="font-display font-extrabold text-primary mb-1">{c.case}</p>
+                <p className="text-sm text-charcoal/75">{c.expected}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
 
       <SiteFooter />
     </div>
