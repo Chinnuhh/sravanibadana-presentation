@@ -296,7 +296,7 @@ WHERE m.TotalGifts >= 3
           <Card kicker="Wait" title="2–3 days">Give donors time to act before escalating channels. Avoids the “we just emailed and immediately texted” feeling that erodes trust.</Card>
           <Card kicker="Decision Split" title="Did they engage?">Branch on email open, save-link click, payment update, or explicit cancel. Engaged donors move to thank-you + nurture; non-engaged donors continue down the escalation path.</Card>
           <Card kicker="SMS, direct + human" title="Mobile-friendly save options">
-            <p className="italic">“Hi Sarah, thank you for supporting Orange Sky. Your donations have already helped provide 12 safe laundry services. If things are difficult right now, we can help adjust your giving rather than cancel completely.”</p>
+            <p className="italic">“Hi Sravani, thank you for supporting Orange Sky. Your donations have already helped provide 12 safe laundry services. If things are difficult right now, we can help adjust your giving rather than cancel completely.”</p>
             <p>Short link to a CloudPage where they can pause, reduce, or talk to support. SMS is here because of its open-rate advantage and emotional immediacy.</p>
           </Card>
           <Card kicker="Wait + Decision Split" title="2 days, then check SMS click + donation activity">If still no engagement, route into the high-value escalation branch.</Card>
