@@ -274,7 +274,7 @@ function SqlBlock({ title, sql, target }: { title: string; sql: string; target: 
         <p className="font-display font-extrabold text-charcoal">{title}</p>
         <p className="text-xs text-muted-foreground mt-0.5">Target → <span className="font-mono text-primary-dark">{target}</span></p>
       </div>
-      <pre className="px-4 py-4 text-xs leading-relaxed overflow-x-auto bg-charcoal text-white/90 font-mono">{sql}</pre>
+      <pre className="px-4 py-4 text-xs leading-relaxed overflow-x-auto bg-periwinkle text-charcoal font-mono">{sql}</pre>
     </div>
   );
 }
