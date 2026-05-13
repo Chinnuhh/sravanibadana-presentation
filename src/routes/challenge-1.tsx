@@ -234,7 +234,7 @@ function Challenge1() {
             <FieldTable rows={atRiskFields} />
           </div>
           <div>
-            <h3 className="font-display font-extrabold text-base mb-3">3. Save_Outcome_DE, closes the reporting loop</h3>
+            <h3 className="font-display font-extrabold text-base mb-3">Save_Outcome_DE, closes the reporting loop</h3>
             <FieldTable rows={outcomeFields} />
           </div>
           <div>
