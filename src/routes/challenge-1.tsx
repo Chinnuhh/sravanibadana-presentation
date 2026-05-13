@@ -128,7 +128,7 @@ function Challenge1() {
         </div>
       </Section>
 
-      <Section eyebrow="How I'd build it" title="Six steps from data signal to a save journey that ships">
+      <Section eyebrow="How I'd build it" title="Steps from data signal to a save journey that ships">
         <ol className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 counter-reset-build">
           {[
             { title: "Diagnose first", body: "Pull 12 months of cancellations, segment by gift number, channel, amount and reason. Confirm the 'gift #3' pattern and find any sub-segments hiding in it." },
