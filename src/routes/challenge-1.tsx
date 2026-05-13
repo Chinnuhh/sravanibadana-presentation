@@ -215,7 +215,7 @@ function Challenge1() {
         </figure>
       </Section>
 
-      <Section eyebrow="Step 0" title="Define the business logic before opening SFMC">
+      <Section eyebrow="Step 0" title="Business logic before opening SFMC">
         <div className="grid md:grid-cols-3 gap-5">
           <Card kicker="Objective" title="Reduce cancellations after the 3rd gift">Single, measurable goal that every stage of the journey ladders up to.</Card>
           <Card kicker="Entry" title="Donors with ≥ 3 gifts AND a risk signal">Failed payment · cancellation page visit · 60-day disengagement · explicit “stop” request · missed recurring payment.</Card>
