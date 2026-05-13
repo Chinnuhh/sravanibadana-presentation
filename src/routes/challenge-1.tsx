@@ -238,7 +238,7 @@ function Challenge1() {
             <FieldTable rows={outcomeFields} />
           </div>
           <div>
-            <h3 className="font-display font-extrabold text-base mb-3">4. Phone_Queue_DE, task list for the Supporter Care team</h3>
+            <h3 className="font-display font-extrabold text-base mb-3">Phone_Queue_DE, task list for the Supporter Care team</h3>
             <FieldTable rows={phoneQueueFields} />
           </div>
         </div>
