@@ -3,6 +3,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { ChallengeHero } from "@/components/ChallengeHero";
 import { Section } from "@/components/Section";
 import valuesPoster from "@/assets/orange-sky-values.png";
+import vanSticker from "@/assets/orange-sky-van-sticker.png";
 
 export const Route = createFileRoute("/challenge-4")({
   head: () => ({
@@ -49,6 +50,8 @@ function Challenge4() {
         number="04"
         title="Reflecting on the Orange Sky Values"
         subtitle="An honest look at the characteristics I resonate with and the ones I'm actively working on."
+        sticker={vanSticker}
+        stickerAlt="Orange Sky van"
       />
 
       <Section eyebrow="A note before I start" title="Why this matters to me">

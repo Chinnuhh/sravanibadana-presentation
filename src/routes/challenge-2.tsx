@@ -3,6 +3,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { ChallengeHero } from "@/components/ChallengeHero";
 import { Section, Card } from "@/components/Section";
 import journeyImage from "@/assets/challenge-2-journey.png";
+import vanSticker from "@/assets/orange-sky-van-sticker.png";
 
 export const Route = createFileRoute("/challenge-2")({
   head: () => ({
@@ -54,6 +55,8 @@ function Challenge2() {
         number="02"
         title="When a single gift hits $1,000, exit SMS, flag Mid-Value, create a phone task, notify the team"
         subtitle="A complete SFMC build: clean data foundation in Automation Studio, a Decision Split inside Journey Builder, and a global SMS suppression safety net."
+        sticker={vanSticker}
+        stickerAlt="Orange Sky van"
       />
 
       <Section eyebrow="The goal in one breath" title="What the system has to do, end to end">

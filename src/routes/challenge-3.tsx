@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { ChallengeHero } from "@/components/ChallengeHero";
+import vanSticker from "@/assets/orange-sky-van-sticker.png";
 import { Section, Card } from "@/components/Section";
 
 export const Route = createFileRoute("/challenge-3")({
@@ -22,6 +23,8 @@ function Challenge3() {
         number="03"
         title="Scoping the new corporate payroll giving journey"
         subtitle="A repeatable scoping approach that gets Finance, Corporate Partnerships and Marketing aligned before a single email is built."
+        sticker={vanSticker}
+        stickerAlt="Orange Sky van"
       />
 
       <Section eyebrow="My approach" title="Discovery first, automation second">
