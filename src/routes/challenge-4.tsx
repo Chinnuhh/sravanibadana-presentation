@@ -55,9 +55,6 @@ function Challenge4() {
         <p className="text-base text-muted-foreground max-w-3xl leading-relaxed">
           Orange Sky's mission isn't really about laundry or showers, it's about the conversation that happens during them. That insight changes how I think about the work. The Values aren't a poster on the wall; they're the operating system for how the team shows up, and they're the reason supporters keep giving. So this reflection isn't a tick-box exercise for me. It's a chance to be honest about where I'm aligned and where I have growth to do.
         </p>
-        <p className="text-xs text-muted-foreground/70 mt-4 italic">
-          Note: this reflection draws on my reading of the Orange Sky Values. If the panel can share the values picture in the interview, I'd love to revisit anything I've under-emphasised.
-        </p>
       </Section>
 
       <Section eyebrow="The source" title="The Orange Sky Values, in their own words">
