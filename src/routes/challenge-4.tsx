@@ -16,23 +16,27 @@ export const Route = createFileRoute("/challenge-4")({
 
 const resonates = [
   {
-    value: "Have a Yarn",
-    body: "This is the value I most identify with. My instinct in any room, donor, stakeholder, teammate, is to start with the conversation, not the agenda. The best lifecycle work I've done began as a yarn over coffee, not as a brief. It's how trust gets built and how I learn what people actually need, which is almost never what the first email said. I genuinely believe the conversation IS the work, and the deliverable comes second.",
+    value: "Cultivates Connection",
+    body: "This value resonated with me the most because I genuinely value human connection and making people feel comfortable, heard, and included. I naturally try to approach people with empathy and understanding, and I believe small conversations and interactions can leave a lasting impact. I appreciate environments where people feel safe being themselves and where trust is built through kindness, openness, and respect.",
   },
   {
-    value: "Keep it Simple",
-    body: "I'm allergic to over-engineering. Whenever I scope a journey, my first pass is always more complicated than the second, and the second is always more complicated than what ships. I default to: what's the smallest thing we can put in front of a donor that proves the idea? Simple things scale. Clever things break.",
+    value: "Strives To Improve",
+    body: "I connect strongly with the idea of continuous growth and learning. I enjoy challenging myself, being curious, and finding better ways to approach things. Whether it's learning a new skill, adapting to unfamiliar situations, or reflecting on feedback, I see growth as an ongoing process. I value people and teams who are open-minded, willing to evolve, and committed to learning together.",
   },
   {
-    value: "Be Genuine",
-    body: "I'd rather give a partner an honest 'we got this wrong, here's what we're doing about it' than a polished spin. In donor comms specifically, this matters, supporters can smell manufactured warmth from a mile away. The best-performing email I've ever written was the one that admitted a mistake.",
+    value: "Gives Things A Crack",
+    body: "This value feels very genuine and realistic to me. A lot of my personal growth has come from trying things before feeling fully ready and learning through experience. I admire environments where people are encouraged to take initiative, experiment with ideas, and not be afraid of mistakes. I believe resilience comes from being willing to keep showing up, learning, and trying again.",
   },
 ];
 
 const workingOn = [
   {
-    value: "Make it Better",
-    body: "I have a 'ship it' bias which is a strength but can become a weakness, sometimes 'good enough' becomes 'left alone.' I'm working on building the optimisation loop into my own habits, not just into the project plan. Carving out the post-launch time to actually look at what worked, what didn't, and to act on it, rather than racing to the next thing. The retention journey in Challenge 1 reflects this learning: I baked the A/B testing and predictive scoring into the design from day one, instead of leaving it as a 'nice to have' for phase two.",
+    value: "Walks The Walk",
+    body: "I care deeply about doing meaningful and thoughtful work, but one area I continue to improve in is backing myself more confidently in fast-moving situations. Sometimes I spend extra time refining ideas internally before sharing them. I've been learning that growth also comes from speaking up earlier, trusting collaboration, and balancing thoughtfulness with action.",
+  },
+  {
+    value: "Celebrates Success",
+    body: "I naturally focus on what can be improved next, which sometimes means I move past achievements too quickly. I've been becoming more intentional about recognising progress, celebrating small wins, and appreciating both my own efforts and the efforts of others. I've realised how important encouragement and recognition are in helping people feel valued and motivated.",
   },
 ];
 
