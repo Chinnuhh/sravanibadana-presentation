@@ -53,24 +53,16 @@ function Challenge2() {
       <ChallengeHero
         kicker="Question 02 · Journey Architecture"
         number="02"
-        title="When a single gift hits $1,000, exit SMS, flag Mid-Value, create a phone task, notify the team"
-        subtitle="A complete SFMC build: clean data foundation in Automation Studio, a Decision Split inside Journey Builder, and a global SMS suppression safety net."
+        title="Routing $1,000+ donors out of automation and into a human conversation"
+        subtitle="A donor who gives $1,000 in a single gift is no longer a regular supporter, they're a Mid-Value relationship. The lifecycle journey has to recognise that the moment it happens and hand them off to a person, not the next scheduled SMS."
         sticker={vanSticker}
         stickerAlt="Orange Sky van"
       />
 
-      <Section eyebrow="Why this flow exists" title="Routing $1,000+ donors out of automation and into a human conversation">
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
-          <p className="text-base text-muted-foreground leading-relaxed">
-            A donor who gives <strong className="text-charcoal">$1,000 in a single gift</strong> is no longer a regular supporter, they're a <strong className="text-charcoal">Mid-Value relationship</strong>.
-          </p>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            The lifecycle journey has to recognise that the moment it happens and <strong className="text-charcoal">hand them off to a person</strong>, not the next scheduled SMS.
-          </p>
-        </div>
-      </Section>
-
-      <Section eyebrow="The goal in one breath" title="What the system has to do, end to end">
+      <Section eyebrow="The goal in one breath" title="When a single gift hits $1,000, exit SMS, flag Mid-Value, create a phone task, notify the team">
+        <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mb-6">
+          A complete SFMC build: clean data foundation in Automation Studio, a Decision Split inside Journey Builder, and a global SMS suppression safety net.
+        </p>
         <ul className="space-y-2 max-w-3xl text-base text-muted-foreground leading-relaxed">
           <li>· Donor is sitting inside the SMS lifecycle journey</li>
           <li>· A single donation lands at <strong className="text-charcoal">$1,000 or above</strong></li>
