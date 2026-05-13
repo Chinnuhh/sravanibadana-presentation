@@ -87,7 +87,7 @@ function Challenge2() {
         </figure>
       </Section>
 
-      <Section eyebrow="Step 0 · Data foundation" title="Three Data Extensions before we touch Journey Builder" desc="Everything downstream depends on a clean source of truth, a staging layer, and a queue.">
+      <Section eyebrow="Step 0 · Data foundation" title="Data Extensions before we touch Journey Builder" desc="Everything downstream depends on a clean source of truth, a staging layer, and a queue.">
         <div className="space-y-8">
           {[
             { name: "Donor_Master_DE", role: "Source of truth, donor profile + lifecycle flags", rows: masterFields },
@@ -124,7 +124,7 @@ function Challenge2() {
 
       <Section eyebrow="Step 1 · Automation Studio" title="Ingest the donation, then run the $1,000 rule engine in SQL" desc="One Automation, four SQL Query activities, this is where the actual logic lives.">
         <div className="space-y-5">
-          <Card kicker="1.1 · Import Activity" title="Land raw gifts in staging">
+          <Card kicker="Import Activity" title="Land raw gifts in staging">
             <p>SFTP/CRM file import (or API ingestion for real-time) → target = <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">Donation_Staging_DE</code>. <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">TransactionID</code> as PK guarantees idempotency.</p>
           </Card>
 
@@ -201,13 +201,13 @@ WHERE d.GiftAmount >= 1000`}
         </div>
       </Section>
 
-      <Section dark eyebrow="Step 4 · High value path" title="Four activities, in this exact order">
+      <Section dark eyebrow="Step 4 · High value path" title="Activities, in this exact order">
         <ol className="space-y-4 max-w-3xl">
           {[
-            { t: "4.1 · Update Contact / Data Extension Update", d: "Set MidValueFlag = 1 and SMS_Eligible = 0 on Donor_Master_DE. This is what stops every future SMS send." },
-            { t: "4.2 · Data Extension Entry Activity → MidValue_Call_Queue_DE", d: "Inserts the row that becomes the phone task. ContactID is the PK so duplicate $1k gifts can't create duplicate tasks." },
-            { t: "4.3 · Send Email, internal alert to the Mid-Value team", d: "Includes Name, Phone, GiftAmount, GiftDate. Triggers immediate human action, a second channel in case the queue isn't being watched." },
-            { t: "4.4 · Exit Criteria / End Journey activity", d: "Hard exit so the lifecycle automation can never speak to this donor again from inside this journey." },
+            { t: "Update Contact / Data Extension Update", d: "Set MidValueFlag = 1 and SMS_Eligible = 0 on Donor_Master_DE. This is what stops every future SMS send." },
+            { t: "Data Extension Entry Activity → MidValue_Call_Queue_DE", d: "Inserts the row that becomes the phone task. ContactID is the PK so duplicate $1k gifts can't create duplicate tasks." },
+            { t: "Send Email, internal alert to the Mid-Value team", d: "Includes Name, Phone, GiftAmount, GiftDate. Triggers immediate human action, a second channel in case the queue isn't being watched." },
+            { t: "Exit Criteria / End Journey activity", d: "Hard exit so the lifecycle automation can never speak to this donor again from inside this journey." },
           ].map((s) => (
             <li key={s.t} className="rounded-xl border border-white/15 bg-white/5 p-5">
               <h3 className="font-display font-extrabold text-white mb-1">{s.t}</h3>
@@ -246,7 +246,7 @@ WHERE d.GiftAmount >= 1000`}
         </Card>
       </Section>
 
-      <Section dark eyebrow="Step 9 · Test cases" title="What I'd run before go-live">
+      <Section dark eyebrow="Test cases" title="What I'd run before go-live">
         <div className="grid md:grid-cols-2 gap-4">
           {[
             { case: "Case 1 · Gift = $50", expected: "Stays in SMS journey. No flag, no queue row." },

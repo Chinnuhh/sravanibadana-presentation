@@ -84,7 +84,7 @@ function Challenge4() {
       <section className="bg-periwinkle text-charcoal">
         <div className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-16 md:py-20 border-t border-black/5">
           <p className="text-[13.5px] font-bold tracking-[3px] uppercase mb-2 text-primary">Values I'm continuing to improve in</p>
-          <h2 className="font-display font-black text-2xl md:text-3xl mb-8">Two growth edges I'd own publicly</h2>
+          <h2 className="font-display font-black text-2xl md:text-3xl mb-8">Growth edges I'd own publicly</h2>
           <div className="space-y-5">
             {workingOn.map((v) => (
               <div key={v.value} className="rounded-xl border border-primary/40 bg-white/70 backdrop-blur p-7 relative overflow-hidden">
@@ -112,13 +112,13 @@ function Challenge4() {
 
         <div className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-24 md:py-32 relative text-center">
           <p className="font-display font-black text-[15vw] md:text-[10rem] leading-[0.85] tracking-tight">
-            <span className="text-primary">Thank</span><br /><span className="text-charcoal">you.</span>
+            <span className="text-primary">Thank</span><br /><span className="text-charcoal">you</span>
           </p>
           <p className="font-display font-extrabold text-3xl md:text-5xl mt-10 mx-auto max-w-3xl leading-tight">
-            Better for being <span className="italic underline decoration-primary decoration-4 underline-offset-8 text-primary">Orange</span>. 🧡
+            Better for being <span className="italic underline decoration-primary decoration-4 underline-offset-8 text-primary">Orange</span> 🧡
           </p>
           <p className="text-lg md:text-xl mt-10 mx-auto max-w-2xl text-charcoal/80 leading-relaxed">
-            Thanks for the time, <strong className="font-black text-primary">Tenille</strong>, <strong className="font-black text-primary">Kasey</strong> &amp; <strong className="font-black text-primary">Chanel</strong>. Happy to dig into any of these answers.
+            Thanks for the time, <strong className="font-black text-primary">Tenille</strong>, <strong className="font-black text-primary">Kasey</strong> &amp; <strong className="font-black text-primary">Chanel</strong>. Happy to dig into any of these answers
           </p>
         </div>
       </section>

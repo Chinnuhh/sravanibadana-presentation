@@ -35,7 +35,7 @@ function Challenge3() {
 
       <Section eyebrow="Scoping" title="How I would scope this project (Finance + Corporate Partnerships)" desc="I would start by running structured discovery sessions with both teams separately, then align them together in a joint requirements workshop.">
         <div className="grid md:grid-cols-3 gap-4">
-          <Card kicker="Step 01" title="Discovery with Corporate Partnerships">
+          <Card kicker="Step" title="Discovery with Corporate Partnerships">
             <p><strong>Focus:</strong> relationship, expectations, and employee experience.</p>
             <p>I would clarify:</p>
             <ul className="list-disc pl-5 space-y-1">
@@ -47,7 +47,7 @@ function Challenge3() {
             </ul>
             <p><strong>Key outcome:</strong> a clear definition of the employee journey experience and partner expectations.</p>
           </Card>
-          <Card kicker="Step 02" title="Discovery with Finance Team">
+          <Card kicker="Step" title="Discovery with Finance Team">
             <p><strong>Focus:</strong> data accuracy, reconciliation, and reporting integrity.</p>
             <p>I would clarify:</p>
             <ul className="list-disc pl-5 space-y-1">
@@ -59,7 +59,7 @@ function Challenge3() {
             </ul>
             <p><strong>Key outcome:</strong> a confirmed data source + donation truth model.</p>
           </Card>
-          <Card kicker="Step 03" title="Joint alignment workshop">
+          <Card kicker="Step" title="Joint alignment workshop">
             <p><strong>Finance + Partnerships + CRM/Marketing.</strong> This is where I lock the scope.</p>
             <p>We align on:</p>
             <ul className="list-disc pl-5 space-y-1">
@@ -126,12 +126,12 @@ function Challenge3() {
       <Section eyebrow="Project plan" title="Key deliverables">
         <div className="grid md:grid-cols-2 gap-4">
           {[
-            { k: "01", t: "Requirements & Scope", items: ["Business goals & success metrics", "Stakeholder alignment", "Ownership & governance"] },
-            { k: "02", t: "Data & Integration Design", items: ["Payroll → CRM → SFMC data flow", "Validation & reconciliation rules", "Data Extensions & automation setup"] },
-            { k: "03", t: "Donor Journey Design", items: ["Welcome & thank-you journey", "Impact & milestone communications", "Re-engagement logic"] },
-            { k: "04", t: "Reporting & Dashboards", items: ["Finance reconciliation reporting", "Partner impact dashboards", "Automated scheduled reports"] },
-            { k: "05", t: "Testing & Launch", items: ["UAT & edge-case testing", "Go-live runbook", "Monitoring & optimisation plan"] },
-            { k: "06", t: "Post-Launch Review", items: ["30/60/90-day performance review", "Retention & engagement analysis", "Optimisation backlog"] },
+            { k: "Deliverable", t: "Requirements & Scope", items: ["Business goals & success metrics", "Stakeholder alignment", "Ownership & governance"] },
+            { k: "Deliverable", t: "Data & Integration Design", items: ["Payroll → CRM → SFMC data flow", "Validation & reconciliation rules", "Data Extensions & automation setup"] },
+            { k: "Deliverable", t: "Donor Journey Design", items: ["Welcome & thank-you journey", "Impact & milestone communications", "Re-engagement logic"] },
+            { k: "Deliverable", t: "Reporting & Dashboards", items: ["Finance reconciliation reporting", "Partner impact dashboards", "Automated scheduled reports"] },
+            { k: "Deliverable", t: "Testing & Launch", items: ["UAT & edge-case testing", "Go-live runbook", "Monitoring & optimisation plan"] },
+            { k: "Deliverable", t: "Post-Launch Review", items: ["30/60/90-day performance review", "Retention & engagement analysis", "Optimisation backlog"] },
           ].map((d) => (
             <Card key={d.t} kicker={d.k} title={d.t}>
               <ul className="list-disc pl-5 space-y-1">
@@ -142,7 +142,7 @@ function Challenge3() {
         </div>
       </Section>
 
-      <Section dark eyebrow="Risk register" title="Three risks I'd flag at kick-off">
+      <Section dark eyebrow="Risk register" title="Risks I'd flag at kick-off">
         <div className="grid md:grid-cols-3 gap-4 text-sm">
           {[
             { t: "Data quality from payroll", d: "Files often arrive with inconsistent employee IDs or missing emails. Mitigation: agree a strict file spec + automated validation step before ingestion." },
