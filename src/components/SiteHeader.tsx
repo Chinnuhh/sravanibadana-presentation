@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/orange-sky-logo.png";
+import logo from "@/assets/orange-sky-logo.webp";
 
 export function SiteHeader() {
   const links = [
@@ -13,7 +13,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/90 border-b border-primary-light">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center gap-1 overflow-x-auto">
         <Link to="/" className="flex items-center gap-3 pr-6 py-3 whitespace-nowrap">
-          <img src={logo} alt="Orange Sky" className="h-8 w-auto" />
+          <img src={logo} alt="Orange Sky" className="h-8 w-auto" loading="eager" decoding="async" fetchpriority="high" />
           <span className="font-display font-black text-charcoal text-[11px] tracking-[2px] uppercase border-l border-black/10 pl-3 hidden sm:inline">Panel Presentation</span>
         </Link>
         <nav className="flex items-center gap-0">
