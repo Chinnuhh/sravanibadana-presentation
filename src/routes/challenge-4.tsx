@@ -69,7 +69,7 @@ function Challenge4() {
         </p>
       </Section>
 
-      <Section eyebrow="Values I resonate with" title="Three I'd say are part of how I already work">
+      <Section eyebrow="Values I resonate with" title="Three that already shape how I show up">
         <div className="space-y-5">
           {resonates.map((v) => (
             <div key={v.value} className="bg-white rounded-xl border border-black/8 p-7 relative overflow-hidden">
@@ -81,7 +81,7 @@ function Challenge4() {
         </div>
       </Section>
 
-      <Section dark eyebrow="Values I'm working on" title="The growth edge I'd own publicly">
+      <Section dark eyebrow="Values I'm continuing to improve in" title="Two growth edges I'd own publicly">
         <div className="space-y-5">
           {workingOn.map((v) => (
             <div key={v.value} className="rounded-xl border border-primary/40 bg-white/5 p-7 relative overflow-hidden">
@@ -93,9 +93,9 @@ function Challenge4() {
         </div>
       </Section>
 
-      <Section eyebrow="The bigger picture" title="What this means for how I'd join the team">
+      <Section eyebrow="Personal reflection" title="Why these values feel so human">
         <p className="text-base text-muted-foreground max-w-3xl leading-relaxed">
-          If I'm successful, you'll get someone who leads with the conversation, ships simple things fast, and tells you the truth about how it went. The thing I'd ask the team to hold me accountable for is the follow-through, the unglamorous post-launch optimisation work that turns a good journey into a great one. That's where I want to grow.
+          What stood out to me most about the Orange Sky values is how human they feel. They focus not only on outcomes, but also on how people treat each other, support one another, and grow together. The values reflect empathy, accountability, curiosity, and connection in a very genuine way, which is something I strongly connect with personally and professionally.
         </p>
       </Section>
 
