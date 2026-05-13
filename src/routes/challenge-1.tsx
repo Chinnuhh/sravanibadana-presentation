@@ -128,15 +128,15 @@ function Challenge1() {
         </div>
       </Section>
 
-      <Section eyebrow="How I'd build it" title="Steps from data signal to a save journey that ships">
+      <Section eyebrow="How I'd build it" title="From signal to live journey">
         <ol className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 counter-reset-build">
           {[
-            { title: "Diagnose first", body: "Pull 12 months of cancellations, segment by gift number, channel, amount and reason. Confirm the 'gift #3' pattern and find any sub-segments hiding in it." },
-            { title: "Map the journey on a wall", body: "Co-design with Supporter Care, Fundraising and Data. One sticky note per touchpoint. Agree the goal: save, not pressure." },
-            { title: "Build in CRM", body: "Create a Save Journey audience triggered by cancel intent or risk score. Wire email and SMS nodes, decision splits on engagement (opened, clicked, replied), and a phone task queue for Supporter Care." },
-            { title: "Suppress and protect brand", body: "Hard suppression from appeals, regular acquisition and bulk SMS while a donor is in journey." },
-            { title: "Test small, then scale", body: "A/B subject lines and the pause vs reduce offer on a 20% holdout. Hold a control group to measure true save uplift, not just journey volume." },
-            { title: "Measure what matters", body: "Save rate, downgrade vs full cancel, 6-month LTV vs control, qualitative reasons captured. Report monthly to the wider team." },
+            { title: "Start with understanding the pattern", body: "Look back at 12 months of cancellations to understand where drop-off is happening, especially after the third gift, and whether there are hidden patterns by amount, channel, or behaviour." },
+            { title: "Co-design the experience", body: "Work with Supporter Care, Fundraising, and Data to map the journey together. Focus on the experience first, not the channels, one touchpoint per moment in the supporter journey." },
+            { title: "Build the audience and journey logic", body: "Create a save journey entry based on cancellation intent or risk signals. Use engagement behaviour to guide paths, and set up escalation into a phone task queue where needed." },
+            { title: "Protect the supporter experience", body: "Make sure people aren't overwhelmed by other communications during this period by suppressing overlapping campaigns and ensuring the journey feels intentional, not noisy." },
+            { title: "Test before scaling", body: "Start small with a holdout group, test key decisions like messaging style and save options, then expand once there's confidence in the uplift." },
+            { title: "Measure what actually matters", body: "Not just saves, but what happens afterwards, downgrade behaviour, long-term retention, and whether the relationship stays healthy over time." },
           ].map((step, i) => (
             <li key={step.title} className="relative bg-white rounded-2xl border border-black/8 p-6 hover:border-primary/40 hover:-translate-y-1 transition-all shadow-[0_2px_0_rgba(0,0,0,0.02)] hover:shadow-[0_15px_40px_-15px_rgba(255,107,0,0.35)]">
               <div className="flex items-start gap-4 mb-3">
