@@ -168,7 +168,7 @@ function Challenge1() {
               when: "Day 2",
               channel: "SMS",
               title: "Show impact",
-              body: "Short, human SMS with a 30-second impact video. 'Hey {{first}}, sharing what your support made possible last week 🧡, [link]. No reply needed.'",
+              body: "A short, human message that brings the impact to life quickly, with a simple link to see or feel the difference they've made.",
             },
             {
               when: "Day 4",
