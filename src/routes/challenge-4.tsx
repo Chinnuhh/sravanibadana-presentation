@@ -112,7 +112,7 @@ function Challenge4() {
 
         <div className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-24 md:py-32 relative text-center">
           <p className="font-display font-black text-[15vw] md:text-[10rem] leading-[0.85] tracking-tight">
-            <span className="text-primary">Thank</span><br /><span className="text-charcoal">you.</span>
+            <span className="text-primary">Thank</span><br /><span className="text-charcoal">you</span>
           </p>
           <p className="font-display font-extrabold text-3xl md:text-5xl mt-10 mx-auto max-w-3xl leading-tight">
             Better for being <span className="italic underline decoration-primary decoration-4 underline-offset-8 text-primary">Orange</span>. 🧡
