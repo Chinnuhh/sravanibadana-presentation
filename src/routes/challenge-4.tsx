@@ -4,6 +4,9 @@ import { ChallengeHero } from "@/components/ChallengeHero";
 import { Section } from "@/components/Section";
 import valuesPoster from "@/assets/orange-sky-values.png";
 import vanSticker from "@/assets/orange-sky-van-sticker.png";
+import stickerWasher from "@/assets/sticker-washer.png";
+import stickerShower from "@/assets/sticker-shower.png";
+import stickerChair from "@/assets/sticker-chair.png";
 
 export const Route = createFileRoute("/challenge-4")({
   head: () => ({
