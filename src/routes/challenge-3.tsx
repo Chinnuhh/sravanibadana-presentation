@@ -75,6 +75,20 @@ function Challenge3() {
         </div>
       </Section>
 
+      <Section eyebrow="Solution design" title="How I would design the solution in Salesforce Marketing Cloud" desc="Data model design that supports both real-time triggers (thank you) and batch reporting (Finance + corporate reporting).">
+        <div className="grid md:grid-cols-2 gap-4">
+          {[
+            { t: "Contact Data Extension", d: "Employee-level record — the master Contact in SFMC, keyed for journey entry and personalisation." },
+            { t: "Donation Transaction Data Extension", d: "Each payroll gift recorded as an individual transaction row, enabling per-event triggers and audit history." },
+            { t: "Corporate Partner Data Extension", d: "Employer-level metadata: partner name, branding, communication rules, approval owners." },
+            { t: "Aggregated Summary DE", d: "Monthly or quarterly totals per employee, used for impact statements, milestone messaging and partner reporting." },
+          ].map((d) => (
+            <Card key={d.t} title={d.t}>{d.d}</Card>
+          ))}
+        </div>
+        <p className="text-sm text-muted-foreground mt-6">This structure ensures both <strong>real-time triggers</strong> (thank you on confirmed donation event) and <strong>batch reporting</strong> (Finance reconciliation + corporate partner reporting) are served from the same source of truth.</p>
+      </Section>
+
       <Section eyebrow="Phase 2" title="Key deliverables in the project plan">
         <div className="grid md:grid-cols-2 gap-4">
           {[
