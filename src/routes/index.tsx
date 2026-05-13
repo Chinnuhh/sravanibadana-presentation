@@ -62,9 +62,6 @@ function Index() {
               <Link to="/challenge-1" className="bg-white text-primary font-extrabold text-sm uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-primary-light transition shadow-[0_10px_30px_rgba(0,0,0,0.18)] hover:-translate-y-0.5">
                 Start with Challenge 01 →
               </Link>
-              <Link to="/challenge-4" className="bg-transparent border-2 border-white/70 text-white font-extrabold text-sm uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-white hover:text-primary transition">
-                Skip to Values
-              </Link>
             </div>
           </div>
 
