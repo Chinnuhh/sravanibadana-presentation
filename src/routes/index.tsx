@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
+import logo from "@/assets/orange-sky-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,10 +31,13 @@ function Index() {
           <span className="absolute rounded-full border border-white/10" style={{ width: 800, height: 800, bottom: -350, right: -240 }} />
           <span className="absolute rounded-full border border-white/10" style={{ width: 220, height: 220, bottom: 80, left: 80 }} />
         </div>
+        <div className="relative inline-flex items-center gap-3 bg-white rounded-md px-4 py-2 mb-6 shadow-sm">
+          <img src={logo} alt="Orange Sky" className="h-8 w-auto" />
+        </div>
         <p className="relative text-[11px] font-semibold tracking-[3px] uppercase text-white/70 mb-6">Salesforce Marketing Cloud · Panel Presentation</p>
         <h1 className="relative font-display font-black text-5xl md:text-7xl leading-[1.02] max-w-4xl">
-          Four Challenges,
-          <span className="block text-white/75 font-bold">One Mission.</span>
+          Presented by
+          <span className="block text-white/75 font-bold">Sravani Badana.</span>
         </h1>
         <p className="relative text-white/85 text-lg max-w-xl leading-relaxed mt-6">
           A walk-through of how I'd approach four real Orange Sky problems — from retention automation to the values that hold it all together.
