@@ -9,7 +9,7 @@ interface Props {
 
 export function ChallengeHero({ number, title, subtitle, kicker, sticker, stickerAlt }: Props) {
   return (
-    <section className="relative overflow-hidden bg-primary text-white px-6 md:px-[8vw] py-24 md:py-32">
+    <section className="relative overflow-hidden bg-primary text-white px-6 md:px-[8vw] py-16 md:py-32">
       <div className="absolute inset-0 pointer-events-none">
         <span className="absolute rounded-full border border-white/15" style={{ width: 500, height: 500, top: -180, right: -100 }} />
         <span className="absolute rounded-full border border-white/15" style={{ width: 320, height: 320, top: -60, right: 120 }} />
@@ -23,11 +23,11 @@ export function ChallengeHero({ number, title, subtitle, kicker, sticker, sticke
         />
       )}
       <p className="relative text-[11px] font-semibold tracking-[3px] uppercase text-white/70 mb-6">{kicker}</p>
-      <div className="relative flex items-baseline gap-6 mb-4 flex-wrap">
-        <span className="font-display font-black text-white/30 text-[5rem] leading-none">{number}</span>
-        <h1 className="font-display font-black text-4xl md:text-6xl leading-[1.05] max-w-3xl">{title}</h1>
+      <div className="relative flex items-baseline gap-4 md:gap-6 mb-4 flex-wrap">
+        <span className="font-display font-black text-white/30 text-[3.5rem] md:text-[5rem] leading-none">{number}</span>
+        <h1 className="font-display font-black text-3xl sm:text-4xl md:text-6xl leading-[1.05] max-w-3xl">{title}</h1>
       </div>
-      <p className="relative text-white/85 text-lg max-w-2xl leading-relaxed">{subtitle}</p>
+      <p className="relative text-white/85 text-base md:text-lg max-w-2xl leading-relaxed">{subtitle}</p>
     </section>
   );
 }
