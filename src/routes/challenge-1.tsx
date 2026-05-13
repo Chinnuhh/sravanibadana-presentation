@@ -345,16 +345,6 @@ WHERE m.TotalGifts >= 3
           </div>
         </div>
       </Section>
-
-      <Section eyebrow="Strategic upgrade" title="Move from reactive saves to predictive retention" dark>
-        <p className="text-white/80 text-base max-w-3xl leading-relaxed">
-          The biggest unlock isn’t a better save journey, it’s never needing one. I’d build a
-          <strong className="text-white"> donor health scoring model</strong> on top of this same data model, combining engagement
-          trends, giving frequency, payment behaviour, volunteer/event participation and campaign responsiveness. That score becomes
-          a new entry trigger: nurture donors <em>before</em> the cliff, not after the fall.
-        </p>
-      </Section>
-
       <Section eyebrow="Why this works" title="Save journeys lose when they sound like sales">
         <div className="grid lg:grid-cols-5 gap-8 items-start">
           <p className="lg:col-span-3 text-base text-muted-foreground leading-relaxed">
