@@ -126,12 +126,12 @@ function Challenge3() {
       <Section eyebrow="Project plan" title="Key deliverables">
         <div className="grid md:grid-cols-2 gap-4">
           {[
-            { k: "01", t: "Requirements & Scope", items: ["Business goals & success metrics", "Stakeholder alignment", "Ownership & governance"] },
-            { k: "02", t: "Data & Integration Design", items: ["Payroll → CRM → SFMC data flow", "Validation & reconciliation rules", "Data Extensions & automation setup"] },
-            { k: "03", t: "Donor Journey Design", items: ["Welcome & thank-you journey", "Impact & milestone communications", "Re-engagement logic"] },
-            { k: "04", t: "Reporting & Dashboards", items: ["Finance reconciliation reporting", "Partner impact dashboards", "Automated scheduled reports"] },
-            { k: "05", t: "Testing & Launch", items: ["UAT & edge-case testing", "Go-live runbook", "Monitoring & optimisation plan"] },
-            { k: "06", t: "Post-Launch Review", items: ["30/60/90-day performance review", "Retention & engagement analysis", "Optimisation backlog"] },
+            { k: "Deliverable", t: "Requirements & Scope", items: ["Business goals & success metrics", "Stakeholder alignment", "Ownership & governance"] },
+            { k: "Deliverable", t: "Data & Integration Design", items: ["Payroll → CRM → SFMC data flow", "Validation & reconciliation rules", "Data Extensions & automation setup"] },
+            { k: "Deliverable", t: "Donor Journey Design", items: ["Welcome & thank-you journey", "Impact & milestone communications", "Re-engagement logic"] },
+            { k: "Deliverable", t: "Reporting & Dashboards", items: ["Finance reconciliation reporting", "Partner impact dashboards", "Automated scheduled reports"] },
+            { k: "Deliverable", t: "Testing & Launch", items: ["UAT & edge-case testing", "Go-live runbook", "Monitoring & optimisation plan"] },
+            { k: "Deliverable", t: "Post-Launch Review", items: ["30/60/90-day performance review", "Retention & engagement analysis", "Optimisation backlog"] },
           ].map((d) => (
             <Card key={d.t} kicker={d.k} title={d.t}>
               <ul className="list-disc pl-5 space-y-1">
