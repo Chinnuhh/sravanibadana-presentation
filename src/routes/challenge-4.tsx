@@ -99,6 +99,22 @@ function Challenge4() {
         </p>
       </Section>
 
+      <section className="bg-primary text-white relative overflow-hidden">
+        <div className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute -bottom-32 -right-10 w-[28rem] h-[28rem] rounded-full bg-charcoal/20 blur-3xl" />
+        <div className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-24 md:py-32 relative">
+          <p className="font-display font-black text-[15vw] md:text-[10rem] leading-[0.85] tracking-tight">
+            Thank<br />you.
+          </p>
+          <p className="font-display font-extrabold text-3xl md:text-5xl mt-10 max-w-3xl leading-tight">
+            Better for being <span className="italic underline decoration-white/40 decoration-4 underline-offset-8">Orange</span>. 🧡
+          </p>
+          <p className="text-lg md:text-xl mt-10 max-w-2xl text-white/90 leading-relaxed">
+            Thanks for the time, <strong className="font-black">Tenille</strong>, <strong className="font-black">Kasey</strong> &amp; <strong className="font-black">Chanel</strong>. Happy to dig into any of these answers.
+          </p>
+        </div>
+      </section>
+
       <SiteFooter />
     </div>
   );
