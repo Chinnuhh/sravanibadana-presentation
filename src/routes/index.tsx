@@ -110,7 +110,7 @@ function Index() {
         <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
           <div>
             <p className="text-[11px] font-extrabold tracking-[3px] uppercase text-primary mb-2">The Brief</p>
-            <h2 className="font-display font-black text-3xl md:text-4xl text-charcoal">Four challenges, picked apart with care.</h2>
+            <h2 className="font-display font-black text-3xl md:text-4xl text-charcoal">Four challenges, approached with thoughtful problem-solving and creativity.</h2>
           </div>
           <p className="text-sm text-muted-foreground max-w-sm">Click any card to dive in. Each challenge has its own data model, journey logic and reflection.</p>
         </div>
