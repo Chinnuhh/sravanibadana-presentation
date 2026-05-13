@@ -35,7 +35,7 @@ function Challenge3() {
 
       <Section eyebrow="Scoping" title="How I would scope this project (Finance + Corporate Partnerships)" desc="I would start by running structured discovery sessions with both teams separately, then align them together in a joint requirements workshop.">
         <div className="grid md:grid-cols-3 gap-4">
-          <Card kicker="Step 01" title="Discovery with Corporate Partnerships">
+          <Card kicker="Step" title="Discovery with Corporate Partnerships">
             <p><strong>Focus:</strong> relationship, expectations, and employee experience.</p>
             <p>I would clarify:</p>
             <ul className="list-disc pl-5 space-y-1">
