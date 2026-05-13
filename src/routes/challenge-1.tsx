@@ -25,6 +25,7 @@ const masterFields: [string, string, string][] = [
   ["LastGiftDate", "Date", "Most recent gift timestamp"],
   ["DonorStatus", "Text", "Active · Paused · Reduced · Cancelled"],
   ["PreferredChannel", "Text", "Email · SMS · Phone"],
+  ["EmailOpen", "Boolean", "Tracks whether the donor opens emails, used for engagement scoring"],
 ];
 
 const atRiskFields: [string, string, string][] = [
