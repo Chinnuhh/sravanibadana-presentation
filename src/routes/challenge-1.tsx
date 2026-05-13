@@ -289,22 +289,22 @@ WHERE m.TotalGifts >= 3
 
       <Section eyebrow="Step 3 · Journey Builder" title="The save flow, stage by stage">
         <div className="space-y-5">
-          <Card kicker="Stage 1 · Email 1, immediate" title="Appreciation + impact + alternatives">
+          <Card kicker="Email 1, immediate" title="Appreciation + impact + alternatives">
             <p>Sent the moment the risk trigger fires. Thanks for the first three gifts, shows tangible impact (laundry loads, conversations, services delivered), reinforces community belonging, and offers <strong className="text-charcoal">pause · reduce · change frequency</strong> rather than cancel.</p>
             <p>Personalised with AMPscript: first name, donation history, program/location relevance, specific impact metrics tied to their giving level.</p>
           </Card>
-          <Card kicker="Stage 2 · Wait" title="2–3 days">Give donors time to act before escalating channels. Avoids the “we just emailed and immediately texted” feeling that erodes trust.</Card>
-          <Card kicker="Stage 3 · Decision Split" title="Did they engage?">Branch on email open, save-link click, payment update, or explicit cancel. Engaged donors move to thank-you + nurture; non-engaged donors continue down the escalation path.</Card>
-          <Card kicker="Stage 4 · SMS, direct + human" title="Mobile-friendly save options">
+          <Card kicker="Wait" title="2–3 days">Give donors time to act before escalating channels. Avoids the “we just emailed and immediately texted” feeling that erodes trust.</Card>
+          <Card kicker="Decision Split" title="Did they engage?">Branch on email open, save-link click, payment update, or explicit cancel. Engaged donors move to thank-you + nurture; non-engaged donors continue down the escalation path.</Card>
+          <Card kicker="SMS, direct + human" title="Mobile-friendly save options">
             <p className="italic">“Hi Sarah, thank you for supporting Orange Sky. Your donations have already helped provide 12 safe laundry services. If things are difficult right now, we can help adjust your giving rather than cancel completely.”</p>
             <p>Short link to a CloudPage where they can pause, reduce, or talk to support. SMS is here because of its open-rate advantage and emotional immediacy.</p>
           </Card>
-          <Card kicker="Stage 5 · Wait + Decision Split" title="2 days, then check SMS click + donation activity">If still no engagement, route into the high-value escalation branch.</Card>
-          <Card kicker="Stage 6 · Phone escalation" title="Human empathy for the donors most worth saving">
+          <Card kicker="Wait + Decision Split" title="2 days, then check SMS click + donation activity">If still no engagement, route into the high-value escalation branch.</Card>
+          <Card kicker="Phone escalation" title="Human empathy for the donors most worth saving">
             <p>Triggered when <code className="text-primary-dark">DonationAmount &gt; $50</code> OR donor is long-term OR historically highly engaged. Donor is written into <code className="text-primary-dark">Phone_Queue_DE</code> with priority, that becomes a task in the fundraising/Supporter Care team’s queue.</p>
             <p>Call brief: understand the “why”, offer flexible options, reinforce impact, capture feedback. Not a sales call.</p>
           </Card>
-          <Card kicker="Stage 7 · Outcome branches" title="Saved · Reduced/Paused · Cancelled">
+          <Card kicker="Outcome branches" title="Saved · Reduced/Paused · Cancelled">
             <p><strong className="text-charcoal">Saved</strong> → thank-you confirmation + move into milestone appreciation journey.</p>
             <p><strong className="text-charcoal">Paused / Reduced</strong> → CRM preferences updated automatically + modified-giving journey.</p>
             <p><strong className="text-charcoal">Cancelled</strong> → graceful exit message, optional feedback, win-back segment after a cooling-off period. Goodwill protected.</p>
