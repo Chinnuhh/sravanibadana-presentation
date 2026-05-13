@@ -84,7 +84,7 @@ function Challenge4() {
       <section className="bg-periwinkle text-charcoal">
         <div className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-16 md:py-20 border-t border-black/5">
           <p className="text-[13.5px] font-bold tracking-[3px] uppercase mb-2 text-primary">Values I'm continuing to improve in</p>
-          <h2 className="font-display font-black text-2xl md:text-3xl mb-8">Two growth edges I'd own publicly</h2>
+          <h2 className="font-display font-black text-2xl md:text-3xl mb-8">Growth edges I'd own publicly</h2>
           <div className="space-y-5">
             {workingOn.map((v) => (
               <div key={v.value} className="rounded-xl border border-primary/40 bg-white/70 backdrop-blur p-7 relative overflow-hidden">
