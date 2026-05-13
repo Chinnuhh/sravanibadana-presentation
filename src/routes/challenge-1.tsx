@@ -167,8 +167,7 @@ function Challenge1() {
           ].map((step) => (
             <li key={step.when + step.title} className="pl-6 relative">
               <span className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20" />
-              <div className="flex flex-wrap items-baseline gap-3 mb-2">
-                <span className="font-display font-black text-charcoal text-sm tracking-wider uppercase">{step.when}</span>
+              <div className="mb-2">
                 <span className="text-[10.5px] font-bold uppercase tracking-[2px] text-primary bg-primary/10 px-2 py-0.5 rounded-full">{step.channel}</span>
               </div>
               <h3 className="font-display font-extrabold text-xl text-charcoal mb-1.5">{step.title}</h3>
