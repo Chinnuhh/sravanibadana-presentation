@@ -201,7 +201,7 @@ WHERE d.GiftAmount >= 1000`}
         </div>
       </Section>
 
-      <Section dark eyebrow="Step 4 · High value path" title="Four activities, in this exact order">
+      <Section dark eyebrow="Step 4 · High value path" title="Activities, in this exact order">
         <ol className="space-y-4 max-w-3xl">
           {[
             { t: "Update Contact / Data Extension Update", d: "Set MidValueFlag = 1 and SMS_Eligible = 0 on Donor_Master_DE. This is what stops every future SMS send." },
