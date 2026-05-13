@@ -332,6 +332,26 @@ WHERE m.TotalGifts >= 3
         </p>
       </Section>
 
+      <Section eyebrow="Why this works" title="Save journeys lose when they sound like sales">
+        <div className="grid lg:grid-cols-5 gap-8 items-start">
+          <p className="lg:col-span-3 text-base text-muted-foreground leading-relaxed">
+            Donors at gift #3 don't need a discount, they need to feel seen. Email opens with gratitude, SMS proves impact in 30 seconds, and the phone call is a real conversation, not a script. That's an Orange Sky save journey: built around the donor's life, not our funnel.
+          </p>
+          <div className="lg:col-span-2 grid grid-cols-3 gap-3">
+            {[
+              { stat: "+18%", label: "save rate target" },
+              { stat: "3", label: "channels, 1 voice" },
+              { stat: "0", label: "guilt tactics" },
+            ].map((s) => (
+              <div key={s.label} className="rounded-2xl bg-gradient-to-br from-primary to-primary-dark text-white p-5 text-center shadow-[0_15px_40px_-15px_rgba(0,0,0,0.35)]">
+                <div className="font-display font-black text-3xl md:text-4xl leading-none">{s.stat}</div>
+                <div className="text-[10.5px] font-bold uppercase tracking-[1.5px] text-white/85 mt-2">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       <SiteFooter />
     </div>
   );
