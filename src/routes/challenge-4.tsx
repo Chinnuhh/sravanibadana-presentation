@@ -93,9 +93,9 @@ function Challenge4() {
         </div>
       </Section>
 
-      <Section eyebrow="Personal reflection" title="Why these values feel so human">
+      <Section eyebrow="Personal reflection" title="Why these values resonate with me">
         <p className="text-base text-muted-foreground max-w-3xl leading-relaxed">
-          What stood out to me most about the Orange Sky values is how human they feel. They focus not only on outcomes, but also on how people treat each other, support one another, and grow together. The values reflect empathy, accountability, curiosity, and connection in a very genuine way, which is something I strongly connect with personally and professionally.
+          What stood out to me most about the Orange Sky values is the strong sense of purpose and authenticity behind them. They focus not only on achieving outcomes, but also on how people support one another, build trust, and continue growing together. The values reflect empathy, accountability, curiosity, and connection in a very genuine way, which is something I strongly connect with personally and professionally.
         </p>
       </Section>
 
