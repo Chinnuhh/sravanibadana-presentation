@@ -246,7 +246,7 @@ WHERE d.GiftAmount >= 1000`}
         </Card>
       </Section>
 
-      <Section dark eyebrow="Step 9 · Test cases" title="What I'd run before go-live">
+      <Section dark eyebrow="Test cases" title="What I'd run before go-live">
         <div className="grid md:grid-cols-2 gap-4">
           {[
             { case: "Case 1 · Gift = $50", expected: "Stays in SMS journey. No flag, no queue row." },
