@@ -9,8 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Challenge4RouteImport } from './routes/challenge-4'
+import { Route as Challenge3RouteImport } from './routes/challenge-3'
+import { Route as Challenge2RouteImport } from './routes/challenge-2'
+import { Route as Challenge1RouteImport } from './routes/challenge-1'
 import { Route as IndexRouteImport } from './routes/index'
 
+const Challenge4Route = Challenge4RouteImport.update({
+  id: '/challenge-4',
+  path: '/challenge-4',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Challenge3Route = Challenge3RouteImport.update({
+  id: '/challenge-3',
+  path: '/challenge-3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Challenge2Route = Challenge2RouteImport.update({
+  id: '/challenge-2',
+  path: '/challenge-2',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Challenge1Route = Challenge1RouteImport.update({
+  id: '/challenge-1',
+  path: '/challenge-1',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +43,83 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/challenge-1': typeof Challenge1Route
+  '/challenge-2': typeof Challenge2Route
+  '/challenge-3': typeof Challenge3Route
+  '/challenge-4': typeof Challenge4Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/challenge-1': typeof Challenge1Route
+  '/challenge-2': typeof Challenge2Route
+  '/challenge-3': typeof Challenge3Route
+  '/challenge-4': typeof Challenge4Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/challenge-1': typeof Challenge1Route
+  '/challenge-2': typeof Challenge2Route
+  '/challenge-3': typeof Challenge3Route
+  '/challenge-4': typeof Challenge4Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/challenge-1'
+    | '/challenge-2'
+    | '/challenge-3'
+    | '/challenge-4'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/challenge-1' | '/challenge-2' | '/challenge-3' | '/challenge-4'
+  id:
+    | '__root__'
+    | '/'
+    | '/challenge-1'
+    | '/challenge-2'
+    | '/challenge-3'
+    | '/challenge-4'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  Challenge1Route: typeof Challenge1Route
+  Challenge2Route: typeof Challenge2Route
+  Challenge3Route: typeof Challenge3Route
+  Challenge4Route: typeof Challenge4Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/challenge-4': {
+      id: '/challenge-4'
+      path: '/challenge-4'
+      fullPath: '/challenge-4'
+      preLoaderRoute: typeof Challenge4RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/challenge-3': {
+      id: '/challenge-3'
+      path: '/challenge-3'
+      fullPath: '/challenge-3'
+      preLoaderRoute: typeof Challenge3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/challenge-2': {
+      id: '/challenge-2'
+      path: '/challenge-2'
+      fullPath: '/challenge-2'
+      preLoaderRoute: typeof Challenge2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/challenge-1': {
+      id: '/challenge-1'
+      path: '/challenge-1'
+      fullPath: '/challenge-1'
+      preLoaderRoute: typeof Challenge1RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +132,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  Challenge1Route: Challenge1Route,
+  Challenge2Route: Challenge2Route,
+  Challenge3Route: Challenge3Route,
+  Challenge4Route: Challenge4Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
