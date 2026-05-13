@@ -38,7 +38,7 @@ function Index() {
             <div className="flex items-center gap-4 mb-8">
               <div className="relative">
                 <span className="absolute -inset-3 bg-white/95 rounded-2xl rotate-[-2deg] shadow-[0_18px_40px_rgba(0,0,0,0.18)]" aria-hidden />
-                <img src={logo} alt="Orange Sky Australia" className="relative h-14 md:h-16 w-auto" / loading="lazy" decoding="async" />
+                <img src={logo} alt="Orange Sky Australia" className="relative h-14 md:h-16 w-auto" loading="eager" decoding="async" fetchpriority="high" />
               </div>
               <span className="text-[10.5px] font-extrabold tracking-[3px] uppercase text-white/85 leading-tight">
                 Panel<br />Presentation
@@ -72,7 +72,7 @@ function Index() {
               className="absolute top-6 left-4 right-4 rounded-3xl overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.35)] ring-8 ring-white animate-float"
               style={{ ["--r" as never]: "-3deg", transform: "rotate(-3deg)" }}
             >
-              <img src={team} alt="Orange Sky volunteers cheering at a community event" className="w-full h-[360px] object-cover" / loading="lazy" decoding="async" />
+              <img src={team} alt="Orange Sky volunteers cheering at a community event" className="w-full h-[360px] object-cover" loading="eager" decoding="async" fetchpriority="high" />
               <div className="bg-white px-5 py-3 flex items-center justify-between">
                 <span className="font-display font-black text-charcoal text-sm">Team Orange Sky</span>
                 <span className="text-[10px] font-bold tracking-[2px] uppercase text-primary">Positively Connecting Communities</span>
