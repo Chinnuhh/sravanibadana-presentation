@@ -125,6 +125,59 @@ function Challenge1() {
         </div>
       </Section>
 
+      <Section eyebrow="The save journey, at a glance" title="Cancellation risk spikes after the third gift" desc="The honeymoon is over and the donor is asking, 'is this still worth it?'. The save journey has to answer that question with story, gratitude and a frictionless way to stay.">
+        <ol className="relative border-l-2 border-primary/30 ml-3 space-y-6">
+          {[
+            {
+              when: "Day 0",
+              channel: "Trigger",
+              title: "Listen",
+              body: "Cancellation submitted (or 3rd gift posted + risk score high). Suppress all marketing. Tag donor as 'Save Journey, Active'.",
+            },
+            {
+              when: "Day 0 to 1",
+              channel: "Email",
+              title: "Acknowledge",
+              body: "Warm, no-CTA email from a real Orange Sky face. Subject: 'Before you go, thank you.' Highlight what their gifts already enabled (loads, showers, conversations).",
+            },
+            {
+              when: "Day 2",
+              channel: "SMS",
+              title: "Show impact",
+              body: "Short, human SMS with a 30-second impact video. 'Hey {{first}}, sharing what your support made possible last week 🧡, [link]. No reply needed.'",
+            },
+            {
+              when: "Day 4",
+              channel: "Email",
+              title: "Offer choice",
+              body: "'Make it work for you', pause for 1, 2 or 3 months, lower amount, switch frequency, or keep going. Single-click options. No guilt.",
+            },
+            {
+              when: "Day 6 to 7",
+              channel: "Phone",
+              title: "Human save",
+              body: "Personal call from the Supporter Care team. Script grounded in listening, not retention metrics. Capture cancel reason in CRM for future segmentation.",
+            },
+            {
+              when: "Day 14",
+              channel: "Email",
+              title: "Graceful exit or win-back",
+              body: "If saved, welcome back plus a new 'insider' content stream. If lost, kind goodbye, easy door back, move into the 90-day reactivation audience.",
+            },
+          ].map((step) => (
+            <li key={step.when + step.title} className="pl-6 relative">
+              <span className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-primary ring-4 ring-primary/20" />
+              <div className="flex flex-wrap items-baseline gap-3 mb-2">
+                <span className="font-display font-black text-charcoal text-sm tracking-wider uppercase">{step.when}</span>
+                <span className="text-[10.5px] font-bold uppercase tracking-[2px] text-primary bg-primary/10 px-2 py-0.5 rounded-full">{step.channel}</span>
+              </div>
+              <h3 className="font-display font-extrabold text-xl text-charcoal mb-1.5">{step.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">{step.body}</p>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
       <Section eyebrow="Reference build" title="Journey Builder mock-up, RG Save Journey, Post 3rd Gift" desc="Email-first, SMS as a 2-day fallback, phone escalation for high-value or long-term donors, and a graceful exit path for confirmed cancellations.">
         <figure className="rounded-xl border border-black/8 bg-white overflow-hidden shadow-sm">
           <img
