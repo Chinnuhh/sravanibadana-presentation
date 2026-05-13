@@ -3,6 +3,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { ChallengeHero } from "@/components/ChallengeHero";
 import { Section, Card } from "@/components/Section";
 import journeyImage from "@/assets/challenge-1-journey.png";
+import vanSticker from "@/assets/orange-sky-van-sticker.png";
 
 export const Route = createFileRoute("/challenge-1")({
   head: () => ({
