@@ -102,6 +102,27 @@ function Challenge3() {
         </div>
       </Section>
 
+      <Section eyebrow="Reporting layer" title="Reporting layer" desc="Two distinct reporting outputs serving different audiences from the same source of truth.">
+        <div className="grid md:grid-cols-2 gap-4">
+          <Card kicker="Output 01" title="Finance reporting">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Total payroll donations per partner</li>
+              <li>Total employees participating</li>
+              <li>Month-on-month trend</li>
+              <li>Reconciliation summary (SFMC vs Finance system)</li>
+            </ul>
+          </Card>
+          <Card kicker="Output 02" title="Corporate partner reporting">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Employee participation rate</li>
+              <li>Total impact created</li>
+              <li>Storytelling metrics (e.g., "X showers funded")</li>
+              <li>Individual employee summaries (if allowed)</li>
+            </ul>
+          </Card>
+        </div>
+      </Section>
+
       <Section eyebrow="Phase 2" title="Key deliverables in the project plan">
         <div className="grid md:grid-cols-2 gap-4">
           {[
