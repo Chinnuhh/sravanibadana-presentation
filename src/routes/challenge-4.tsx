@@ -117,18 +117,26 @@ function Challenge4() {
           }}
         />
 
-        {/* playful stickers */}
-        <div className="absolute top-10 right-[8%] w-28 h-28 rounded-full bg-primary text-white font-display font-black text-sm flex items-center justify-center rotate-[14deg] shadow-[0_12px_32px_rgba(249,106,0,0.35)] hidden md:flex">
-          <span className="text-center leading-tight">STAY<br />ORANGE</span>
-        </div>
-        <div className="absolute bottom-16 left-[6%] w-24 h-24 rounded-2xl bg-white border-2 border-primary text-primary font-display font-black text-3xl flex items-center justify-center -rotate-[10deg] shadow-[0_10px_28px_rgba(0,0,0,0.08)] hidden md:flex">
-          🧡
-        </div>
-        <div className="absolute top-[42%] left-[4%] px-4 py-2 rounded-full bg-charcoal text-white text-xs font-bold tracking-[2px] uppercase rotate-[-6deg] hidden lg:block">
-          high-five ✋
-        </div>
-        <div className="absolute bottom-24 right-[10%] px-4 py-2 rounded-full bg-white border border-charcoal/10 text-charcoal text-xs font-bold tracking-[2px] uppercase rotate-[8deg] hidden lg:block">
-          ✨ good vibes
+        {/* playful image stickers */}
+        <img
+          src={stickerWasher}
+          alt=""
+          className="absolute top-8 right-[6%] w-28 md:w-36 lg:w-44 rotate-[10deg] drop-shadow-[0_18px_30px_rgba(0,0,0,0.12)] hidden md:block animate-float"
+        />
+        <img
+          src={stickerShower}
+          alt=""
+          className="absolute bottom-12 left-[5%] w-24 md:w-32 lg:w-40 -rotate-[8deg] drop-shadow-[0_18px_30px_rgba(0,0,0,0.12)] hidden md:block animate-float"
+          style={{ animationDelay: "1.2s" }}
+        />
+        <img
+          src={stickerChair}
+          alt=""
+          className="absolute top-[44%] right-[14%] w-20 md:w-28 lg:w-32 rotate-[-12deg] drop-shadow-[0_18px_30px_rgba(0,0,0,0.12)] hidden lg:block animate-float"
+          style={{ animationDelay: "0.6s" }}
+        />
+        <div className="absolute bottom-24 right-[8%] px-4 py-2 rounded-full bg-white border border-charcoal/10 text-charcoal text-xs font-bold tracking-[2px] uppercase rotate-[8deg] hidden lg:block shadow-[0_8px_20px_rgba(0,0,0,0.06)]">
+          <span className="text-primary">✦</span> good vibes
         </div>
 
         <div className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-24 md:py-32 relative">
