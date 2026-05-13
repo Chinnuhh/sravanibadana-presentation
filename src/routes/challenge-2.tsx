@@ -7,7 +7,7 @@ import journeyImage from "@/assets/challenge-2-journey.png";
 export const Route = createFileRoute("/challenge-2")({
   head: () => ({
     meta: [
-      { title: "Challenge 02 · Flow Logic — Orange Sky" },
+      { title: "Challenge 02 · Flow Logic, Orange Sky" },
       { name: "description", content: "End-to-end SFMC build: when a single gift hits $1,000 the donor exits SMS, is flagged Mid-Value, lands in a phone queue, and the team is notified." },
     ],
   }),
@@ -30,7 +30,7 @@ const stagingFields: [string, string, string][] = [
   ["ContactID", "Text", "Foreign key to Donor_Master_DE"],
   ["GiftAmount", "Decimal", "Raw donation amount from CRM/API"],
   ["GiftDate", "Date", "When the gift was processed"],
-  ["TransactionID", "Text · PK", "Idempotency key — prevents double-processing"],
+  ["TransactionID", "Text · PK", "Idempotency key, prevents double-processing"],
 ];
 
 const queueFields: [string, string, string][] = [
@@ -52,7 +52,7 @@ function Challenge2() {
       <ChallengeHero
         kicker="Question 02 · Journey Architecture"
         number="02"
-        title="When a single gift hits $1,000 — exit SMS, flag Mid-Value, create a phone task, notify the team"
+        title="When a single gift hits $1,000, exit SMS, flag Mid-Value, create a phone task, notify the team"
         subtitle="A complete SFMC build: clean data foundation in Automation Studio, a Decision Split inside Journey Builder, and a global SMS suppression safety net."
       />
 
@@ -84,7 +84,7 @@ function Challenge2() {
       <Section eyebrow="Step 0 · Data foundation" title="Three Data Extensions before we touch Journey Builder" desc="Everything downstream depends on a clean source of truth, a staging layer, and a queue.">
         <div className="space-y-8">
           {[
-            { name: "Donor_Master_DE", role: "Source of truth — donor profile + lifecycle flags", rows: masterFields },
+            { name: "Donor_Master_DE", role: "Source of truth, donor profile + lifecycle flags", rows: masterFields },
             { name: "Donation_Staging_DE", role: "Receives raw donation rows from CRM extract or real-time API", rows: stagingFields },
             { name: "MidValue_Call_Queue_DE", role: "The phone-task queue the Mid-Value team works from", rows: queueFields },
           ].map((de) => (
@@ -116,7 +116,7 @@ function Challenge2() {
         </div>
       </Section>
 
-      <Section eyebrow="Step 1 · Automation Studio" title="Ingest the donation, then run the $1,000 rule engine in SQL" desc="One Automation, four SQL Query activities — this is where the actual logic lives.">
+      <Section eyebrow="Step 1 · Automation Studio" title="Ingest the donation, then run the $1,000 rule engine in SQL" desc="One Automation, four SQL Query activities, this is where the actual logic lives.">
         <div className="space-y-5">
           <Card kicker="1.1 · Import Activity" title="Land raw gifts in staging">
             <p>SFTP/CRM file import (or API ingestion for real-time) → target = <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">Donation_Staging_DE</code>. <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">TransactionID</code> as PK guarantees idempotency.</p>
@@ -157,7 +157,7 @@ FROM Donor_Master_DE m
 JOIN Donation_Staging_DE d
   ON m.ContactID = d.ContactID
 WHERE d.GiftAmount >= 1000`}
-            target="MidValue_Call_Queue_DE (Update — ContactID PK dedupes)"
+            target="MidValue_Call_Queue_DE (Update, ContactID PK dedupes)"
           />
           <SqlBlock
             title="Query 4 · Flag the donor so Journey Builder can react"
@@ -200,7 +200,7 @@ WHERE d.GiftAmount >= 1000`}
           {[
             { t: "4.1 · Update Contact / Data Extension Update", d: "Set MidValueFlag = 1 and SMS_Eligible = 0 on Donor_Master_DE. This is what stops every future SMS send." },
             { t: "4.2 · Data Extension Entry Activity → MidValue_Call_Queue_DE", d: "Inserts the row that becomes the phone task. ContactID is the PK so duplicate $1k gifts can't create duplicate tasks." },
-            { t: "4.3 · Send Email — internal alert to the Mid-Value team", d: "Includes Name, Phone, GiftAmount, GiftDate. Triggers immediate human action — a second channel in case the queue isn't being watched." },
+            { t: "4.3 · Send Email, internal alert to the Mid-Value team", d: "Includes Name, Phone, GiftAmount, GiftDate. Triggers immediate human action, a second channel in case the queue isn't being watched." },
             { t: "4.4 · Exit Criteria / End Journey activity", d: "Hard exit so the lifecycle automation can never speak to this donor again from inside this journey." },
           ].map((s) => (
             <li key={s.t} className="rounded-xl border border-white/15 bg-white/5 p-5">
@@ -213,7 +213,7 @@ WHERE d.GiftAmount >= 1000`}
 
       <Section eyebrow="Step 5 · Low value path" title="Donors under $1,000 stay in the lifecycle">
         <Card kicker="Standard SMS lifecycle" title="Thank you → Impact story → Engagement nudge → Upgrade prompt">
-          <p>Same content cadence as today. The Decision Split is invisible to them — they just keep getting the journey they were already on.</p>
+          <p>Same content cadence as today. The Decision Split is invisible to them, they just keep getting the journey they were already on.</p>
         </Card>
       </Section>
 
@@ -234,9 +234,9 @@ WHERE d.GiftAmount >= 1000`}
         </Card>
       </Section>
 
-      <Section eyebrow="Step 8 · Monitoring & reporting" title="MidValue_Tracking_DE — so we can prove this is working">
+      <Section eyebrow="Step 8 · Monitoring & reporting" title="MidValue_Tracking_DE, so we can prove this is working">
         <Card kicker="Log" title="Entry time · Call outcome · Conversion · Time-to-call">
-          <p>Populated by a nightly Automation Studio job. Feeds a simple dashboard (Datorama / Tableau / Looker — whichever the org uses) so we can show the panel: median time-to-first-call, % of $1k gifts contacted within 48 hours, and downgrade/cancel rates after the call.</p>
+          <p>Populated by a nightly Automation Studio job. Feeds a simple dashboard (Datorama / Tableau / Looker, whichever the org uses) so we can show the panel: median time-to-first-call, % of $1k gifts contacted within 48 hours, and downgrade/cancel rates after the call.</p>
         </Card>
       </Section>
 
@@ -244,9 +244,9 @@ WHERE d.GiftAmount >= 1000`}
         <div className="grid md:grid-cols-2 gap-4">
           {[
             { case: "Case 1 · Gift = $50", expected: "Stays in SMS journey. No flag, no queue row." },
-            { case: "Case 2 · Gift = $999", expected: "Stays in SMS journey. Boundary check — exclusive of $1,000." },
+            { case: "Case 2 · Gift = $999", expected: "Stays in SMS journey. Boundary check, exclusive of $1,000." },
             { case: "Case 3 · Gift = $1,000", expected: "Exits SMS, MidValueFlag = 1, queue row created, team notified." },
-            { case: "Case 4 · Two $1,000 gifts same day", expected: "Exactly one queue row. Update via PK on ContactID — no duplicate phone task." },
+            { case: "Case 4 · Two $1,000 gifts same day", expected: "Exactly one queue row. Update via PK on ContactID, no duplicate phone task." },
           ].map((c) => (
             <div key={c.case} className="rounded-xl border border-primary/40 bg-primary/10 p-5">
               <p className="font-display font-extrabold text-white mb-1">{c.case}</p>

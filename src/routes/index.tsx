@@ -15,8 +15,8 @@ export const Route = createFileRoute("/")({
 const challenges = [
   { num: "01", to: "/challenge-1", title: "The Retention Challenge", tag: "Lifecycle Marketing", desc: "A multi-channel save journey (email, SMS, phone) for regular givers showing cancellation intent after the third gift." },
   { num: "02", to: "/challenge-2", title: "The Flow Logic Challenge", tag: "Journey Architecture", desc: "Dynamic path changes that move $1,000+ donors out of automated SMS into a Mid-Value phone task queue, using Last Gift Amount and Last Gift Date." },
-  { num: "03", to: "/challenge-3", title: "The Requirement Scoping Challenge", tag: "Stakeholder & Delivery", desc: "Scoping an automated reporting and thank-you journey for a new corporate payroll-giving partner — across Finance and Corporate Partnerships." },
-  { num: "04", to: "/challenge-4", title: "The Orange Sky Cultural Challenge", tag: "Values Reflection", desc: "A personal reflection against the Orange Sky Values — what I resonate with, what I'm working on." },
+  { num: "03", to: "/challenge-3", title: "The Requirement Scoping Challenge", tag: "Stakeholder & Delivery", desc: "Scoping an automated reporting and thank-you journey for a new corporate payroll-giving partner, across Finance and Corporate Partnerships." },
+  { num: "04", to: "/challenge-4", title: "The Orange Sky Cultural Challenge", tag: "Values Reflection", desc: "A personal reflection against the Orange Sky Values, what I resonate with, what I'm working on." },
 ] as const;
 
 function Index() {
@@ -40,7 +40,7 @@ function Index() {
           <span className="block text-white/75 font-bold">Sravani Badana.</span>
         </h1>
         <p className="relative text-white/85 text-lg max-w-xl leading-relaxed mt-6">
-          A walk-through of how I'd approach four real Orange Sky problems — from retention automation to the values that hold it all together.
+          A walk-through of how I'd approach four real Orange Sky problems, from retention automation to the values that hold it all together.
         </p>
         <div className="relative mt-10 flex gap-3">
           <Link to="/challenge-1" className="bg-white text-primary font-bold text-sm uppercase tracking-wider px-6 py-3 rounded-md hover:bg-primary-light transition">Start with Challenge 01</Link>

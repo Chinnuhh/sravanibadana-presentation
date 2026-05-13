@@ -6,7 +6,7 @@ import { Section, Card } from "@/components/Section";
 export const Route = createFileRoute("/challenge-3")({
   head: () => ({
     meta: [
-      { title: "Challenge 03 · Scoping the Payroll Giving Journey — Orange Sky" },
+      { title: "Challenge 03 · Scoping the Payroll Giving Journey, Orange Sky" },
       { name: "description", content: "Scoping an automated reporting and thank-you journey for a new corporate payroll-giving partner." },
     ],
   }),
@@ -26,7 +26,7 @@ function Challenge3() {
 
       <Section eyebrow="My approach" title="Discovery first, automation second">
         <p className="text-base text-muted-foreground max-w-3xl leading-relaxed">
-          The risk on partnership projects isn't the build — it's misalignment between teams who each own a piece of the donor experience. I'd run a structured discovery sprint that surfaces the data flow, the legal/finance constraints, and the partner's brand expectations <em>before</em> I touch SFMC.
+          The risk on partnership projects isn't the build, it's misalignment between teams who each own a piece of the donor experience. I'd run a structured discovery sprint that surfaces the data flow, the legal/finance constraints, and the partner's brand expectations <em>before</em> I touch SFMC.
         </p>
       </Section>
 
@@ -72,7 +72,7 @@ function Challenge3() {
           {[
             { t: "Data quality from payroll", d: "Files often arrive with inconsistent employee IDs or missing emails. Mitigation: agree a strict file spec + automated validation step before ingestion." },
             { t: "Brand approval bottleneck", d: "Two brand teams = two approval cycles. Mitigation: agree templates upfront and lock them; use merge fields for variable content." },
-            { t: "Privacy & consent", d: "Employees may not have opted into Orange Sky marketing — only into payroll giving. Mitigation: separate consent flag; transactional comms only unless explicit opt-in." },
+            { t: "Privacy & consent", d: "Employees may not have opted into Orange Sky marketing, only into payroll giving. Mitigation: separate consent flag; transactional comms only unless explicit opt-in." },
           ].map((r) => (
             <div key={r.t} className="rounded-xl border border-primary/40 bg-white/5 p-5">
               <h4 className="font-display font-extrabold text-primary mb-2">{r.t}</h4>
