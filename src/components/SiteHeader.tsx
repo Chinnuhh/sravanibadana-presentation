@@ -38,7 +38,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="bg-primary text-primary-foreground/80 text-xs py-8 px-6 md:px-12 mt-20 flex flex-wrap justify-between gap-4">
-      <span className="font-display font-black text-charcoal">Orange Sky · Panel Presentation</span>
+      <span className="font-display font-black text-primary-foreground">Orange Sky · Panel Presentation</span>
       <span>Prepared for the interview panel · 2026</span>
     </footer>
   );
