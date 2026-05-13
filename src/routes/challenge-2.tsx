@@ -87,7 +87,7 @@ function Challenge2() {
         </figure>
       </Section>
 
-      <Section eyebrow="Step 0 · Data foundation" title="Three Data Extensions before we touch Journey Builder" desc="Everything downstream depends on a clean source of truth, a staging layer, and a queue.">
+      <Section eyebrow="Step 0 · Data foundation" title="Data Extensions before we touch Journey Builder" desc="Everything downstream depends on a clean source of truth, a staging layer, and a queue.">
         <div className="space-y-8">
           {[
             { name: "Donor_Master_DE", role: "Source of truth, donor profile + lifecycle flags", rows: masterFields },
