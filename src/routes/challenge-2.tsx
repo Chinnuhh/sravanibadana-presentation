@@ -124,7 +124,7 @@ function Challenge2() {
 
       <Section eyebrow="Step 1 · Automation Studio" title="Ingest the donation, then run the $1,000 rule engine in SQL" desc="One Automation, four SQL Query activities, this is where the actual logic lives.">
         <div className="space-y-5">
-          <Card kicker="1.1 · Import Activity" title="Land raw gifts in staging">
+          <Card kicker="Import Activity" title="Land raw gifts in staging">
             <p>SFTP/CRM file import (or API ingestion for real-time) → target = <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">Donation_Staging_DE</code>. <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">TransactionID</code> as PK guarantees idempotency.</p>
           </Card>
 
