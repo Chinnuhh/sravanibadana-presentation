@@ -81,17 +81,21 @@ function Challenge4() {
         </div>
       </Section>
 
-      <Section dark eyebrow="Values I'm continuing to improve in" title="Two growth edges I'd own publicly">
-        <div className="space-y-5">
-          {workingOn.map((v) => (
-            <div key={v.value} className="rounded-xl border border-primary/40 bg-white/5 p-7 relative overflow-hidden">
-              <div className="absolute top-0 left-0 bottom-0 w-1 bg-primary" />
-              <h3 className="font-display font-extrabold text-2xl text-primary mb-3">{v.value}</h3>
-              <p className="text-white/85 leading-relaxed">{v.body}</p>
-            </div>
-          ))}
+      <section className="bg-periwinkle text-charcoal">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-16 md:py-20 border-t border-black/5">
+          <p className="text-[13.5px] font-bold tracking-[3px] uppercase mb-2 text-primary">Values I'm continuing to improve in</p>
+          <h2 className="font-display font-black text-2xl md:text-3xl mb-8">Two growth edges I'd own publicly</h2>
+          <div className="space-y-5">
+            {workingOn.map((v) => (
+              <div key={v.value} className="rounded-xl border border-primary/40 bg-white/70 backdrop-blur p-7 relative overflow-hidden">
+                <div className="absolute top-0 left-0 bottom-0 w-1 bg-primary" />
+                <h3 className="font-display font-extrabold text-2xl text-primary mb-3">{v.value}</h3>
+                <p className="text-charcoal/85 leading-relaxed">{v.body}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
 
       <Section eyebrow="Personal reflection" title="Why these values resonate with me">
         <p className="text-base text-muted-foreground max-w-3xl leading-relaxed">
