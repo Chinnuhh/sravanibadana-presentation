@@ -82,8 +82,8 @@ function FieldTable({ rows }: { rows: [string, string, string][] }) {
 
 function CodeBlock({ title, code }: { title: string; code: string }) {
   return (
-    <div className="rounded-xl border border-black/8 bg-charcoal text-white overflow-hidden">
-      <div className="px-4 py-2 text-[11px] font-bold tracking-[2px] uppercase text-primary border-b border-white/10">{title}</div>
+    <div className="rounded-xl border border-black/8 bg-periwinkle text-charcoal overflow-hidden">
+      <div className="px-4 py-2 text-[11px] font-bold tracking-[2px] uppercase text-primary border-b border-charcoal/10">{title}</div>
       <pre className="p-4 text-[12.5px] leading-relaxed overflow-x-auto"><code>{code}</code></pre>
     </div>
   );
