@@ -8,42 +8,37 @@ import vanSticker from "@/assets/orange-sky-van-sticker.webp";
 export const Route = createFileRoute("/challenge-2")({
   head: () => ({
     meta: [
-      { title: "Challenge 02 · Flow Logic, Orange Sky" },
-      { name: "description", content: "End-to-end SFMC build: when a single gift hits $1,000 the donor exits SMS, is flagged Mid-Value, lands in a phone queue, and the team is notified." },
+      { title: "Challenge 02 · High-Value Donor Escalation" },
+      { name: "description", content: "A dynamic SFMC + Salesforce Service Cloud journey that moves $1,000+ donors out of automation and into human-led Mid-Value stewardship." },
     ],
   }),
   component: Challenge2,
 });
 
-const masterFields: [string, string, string][] = [
-  ["ContactID", "Text · PK", "Donor identifier (CRM ID)"],
-  ["Email", "EmailAddress", "Primary email"],
-  ["Mobile", "Phone", "SMS-capable mobile"],
-  ["FirstName / LastName", "Text", "Personalisation + queue display name"],
-  ["LastGiftAmount", "Decimal", "Most recent single gift amount"],
-  ["LastGiftDate", "Date", "Timestamp of the most recent gift"],
-  ["TotalLifetimeGiving", "Decimal", "Optional but useful for segmentation"],
-  ["MidValueFlag", "Boolean", "TRUE once donor crosses $1,000"],
-  ["SMS_Eligible", "Boolean", "FALSE = globally suppress from SMS"],
+const newGiftsFields: [string, string, string][] = [
+  ["ContactKey", "Text · PK", "Donor identifier"],
+  ["LastGiftAmount", "Decimal", "Triggers the $1,000 rule"],
+  ["LastGiftDate", "Date", "Recency validation"],
+  ["EntrySource", "Text", "Campaign or journey origin"],
+  ["CaseID", "Text", "Linked Salesforce case"],
+  ["CaseCreatedFlag", "Boolean", "Prevents duplicate case creation"],
+  ["CallResult", "Text", "Outcome captured back from Salesforce"],
+  ["JourneyStatus", "Text", "Where the donor sits in the flow"],
 ];
 
-const stagingFields: [string, string, string][] = [
-  ["ContactID", "Text", "Foreign key to Donor_Master_DE"],
-  ["GiftAmount", "Decimal", "Raw donation amount from CRM/API"],
-  ["GiftDate", "Date", "When the gift was processed"],
-  ["TransactionID", "Text · PK", "Idempotency key, prevents double-processing"],
+const phoneQueueFields: [string, string, string][] = [
+  ["ContactKey", "Text · PK", "Prevents duplicate tasks"],
+  ["CaseID", "Text", "Links to CRM activity"],
+  ["PriorityLevel", "Text", "Based on gift size and tenure"],
+  ["AssignedAgent", "Text", "Mid-Value team owner"],
+  ["CallStatus", "Text", "Tracks task progress"],
 ];
 
-const queueFields: [string, string, string][] = [
-  ["ContactID", "Text · PK", "PK so duplicate $1k gifts cannot create duplicate tasks"],
-  ["Name", "Text", "FirstName + LastName for the call agent"],
-  ["Phone", "Phone", "Mobile to dial"],
-  ["GiftAmount", "Decimal", "Context for the call"],
-  ["GiftDate", "Date", "Context for the call"],
-  ["PriorityLevel", "Text", "'High Priority' for $1k+ gifts"],
-  ["Status", "Text", "New · Assigned · Completed"],
-  ["CreatedDate", "Date", "Time the task was generated"],
-  ["AssignedAgent", "Text", "Filled in by Mid-Value team lead"],
+const callResultFields: [string, string, string][] = [
+  ["ContactKey", "Text · PK", "Match the donor"],
+  ["CaseID", "Text", "Salesforce reference"],
+  ["CallResult", "Text", "Reached · Not Reached · Saved · Declined"],
+  ["UpdatedDate", "Date", "Sync timestamp"],
 ];
 
 function Challenge2() {
@@ -53,46 +48,122 @@ function Challenge2() {
       <ChallengeHero
         kicker="Question 02 · Journey Architecture"
         number="02"
-        title="Routing $1,000+ donors out of automation and into a human conversation"
-        subtitle="A donor who gives $1,000 in a single gift is no longer a regular supporter, they're a Mid-Value relationship. The lifecycle journey has to recognise that the moment it happens and hand them off to a person, not the next scheduled SMS."
+        title="Moving $1,000+ donors from automation into human-led Mid-Value stewardship"
+        subtitle="When a donor crosses the $1,000 threshold during an active lifecycle journey, the relationship changes. This system instantly removes them from automated SMS, creates a Salesforce Case, and routes them to a human-led Mid-Value experience."
         sticker={vanSticker}
         stickerAlt="Orange Sky van"
       />
 
-      <Section eyebrow="The goal in one breath" title="When a single gift hits $1,000, exit SMS, flag Mid-Value, create a phone task, notify the team">
+      <Section eyebrow="Why this journey exists" title="High-value moments are emotional signals, not just financial transactions">
         <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mb-6">
-          A complete SFMC build: clean data foundation in Automation Studio, a Decision Split inside Journey Builder, and a global SMS suppression safety net.
+          When a donor reaches a $1,000+ gift threshold, the relationship changes. Continued automation can feel impersonal or even inappropriate. The system needs to shift from marketing automation to human stewardship instantly.
         </p>
+        <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mb-4">Without this logic, donors risk:</p>
         <ul className="space-y-2 max-w-3xl text-base text-muted-foreground leading-relaxed">
-          <li>· Donor is sitting inside the SMS lifecycle journey</li>
-          <li>· A single donation lands at <strong className="text-charcoal">$1,000 or above</strong></li>
-          <li>· Donor immediately <strong className="text-charcoal">exits SMS automation</strong></li>
-          <li>· Donor is <strong className="text-charcoal">flagged as Mid-Value</strong> in the master record</li>
-          <li>· Donor is <strong className="text-charcoal">added to the phone-call task queue</strong></li>
-          <li>· An <strong className="text-charcoal">internal notification</strong> fires to the Mid-Value team</li>
+          <li>· Receiving irrelevant automated SMS after a major gift</li>
+          <li>· Being double-contacted by multiple channels</li>
+          <li>· Falling through gaps between marketing and fundraising teams</li>
         </ul>
-        <p className="text-sm text-muted-foreground/80 mt-5 max-w-3xl">
-          The three fields the whole system pivots on: <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">LastGiftAmount</code>, <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">LastGiftDate</code>, <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">ContactID / SubscriberKey</code>.
+        <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mt-6">
+          This flow ensures every high-value moment triggers immediate recognition, structured follow-up, and coordinated internal action.
         </p>
       </Section>
 
-      <Section eyebrow="Reference build" title="Journey Builder mock-up of the $1,000 Gift Escalation Journey" desc="Decision Split on LastGiftAmount ≥ 1000 routes major gifts into the Mid-Value call queue and out of the SMS lifecycle.">
+      <Section eyebrow="Objectives" title="What success looks like">
+        <div className="rounded-xl border border-black/8 bg-white overflow-hidden">
+          <table className="w-full text-sm">
+            <thead className="bg-muted/40 text-foreground/70">
+              <tr>
+                <th className="text-left px-4 py-2 text-[10px] font-bold tracking-[2px] uppercase">Outcome</th>
+                <th className="text-left px-4 py-2 text-[10px] font-bold tracking-[2px] uppercase">Description</th>
+              </tr>
+            </thead>
+            <tbody className="text-muted-foreground">
+              {[
+                ["Immediate recognition of high-value donors", "Every $1,000+ donor is flagged in real time and routed to Mid-Value care"],
+                ["Remove automation friction", "Donors are instantly removed from SMS and promotional journeys"],
+                ["Enable human-first engagement", "Mid-Value team receives structured call tasks with full context"],
+                ["Prevent duplicate outreach", "Case-based logic prevents multiple call tasks for the same donor"],
+                ["Capture structured outcomes", "Call results are written back into Salesforce + SFMC for segmentation"],
+                ["Improve retention and upgrade potential", "High-value donors are nurtured through personalised stewardship"],
+              ].map(([o, d]) => (
+                <tr key={o} className="border-t border-black/5 hover:bg-primary-light/30">
+                  <td className="px-4 py-2.5 font-semibold text-charcoal">{o}</td>
+                  <td className="px-4 py-2.5">{d}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Section>
+
+      <Section eyebrow="Reference build" title="Journey Builder Mid-Value Escalation Flow" desc="Entry from New_Gifts_DE → Decision Split on Last Gift Amount → if ≥ $1,000, suppress SMS and trigger Salesforce Case → Case ID written back → wait for call outcome → dynamic paths based on Reached / Not Reached / Saved / Declined.">
         <figure className="rounded-xl border border-black/8 bg-white overflow-hidden shadow-sm">
           <img
             src={journeyImage}
-            alt="Salesforce Marketing Cloud Journey Builder showing a $1,000 Gift Escalation Journey with a Decision Split on LastGiftAmount, a Yes branch updating the contact and adding them to the Mid-Value call queue, and a No branch continuing the SMS lifecycle."
+            alt="Journey Builder Mid-Value escalation flow with decision splits routing high-value donors to Salesforce Case creation and call outcome paths."
             className="w-full h-auto block"
             loading="lazy"
           />
         </figure>
       </Section>
 
-      <Section eyebrow="Step 0 · Data foundation" title="Data Extensions before we touch Journey Builder" desc="Everything downstream depends on a clean source of truth, a staging layer, and a queue.">
+      <Section eyebrow="How I'd build it" title="Steps from gift event to human-led Mid-Value engagement">
+        <div className="space-y-5">
+          <Card kicker="01 · Data foundation" title="New Gifts Data Extension as the trigger source">
+            <p>Every donation enters a New Gifts DE that acts as the trigger source. It captures ContactKey, Last Gift Amount, Last Gift Date, Entry Source, Case ID, Case Created Flag, Call Result and Journey Status, so every donation is trackable and actionable in real time.</p>
+          </Card>
+          <Card kicker="02 · Journey Builder trigger logic" title="Decision Split on Last Gift Amount and recency">
+            <p>Entry is based on a new gift received or an updated Last Gift Amount. If the gift is ≥ $1,000 and is the most recent transaction, the donor exits the automated SMS journey immediately, is flagged Mid-Value Eligible, and a Salesforce Case is created. Otherwise the donor continues the standard lifecycle journey.</p>
+          </Card>
+          <Card kicker="03 · Salesforce Case creation + suppression" title="One source of truth for high-value engagement">
+            <p>When a donor qualifies, a Salesforce Case or Task is created automatically and assigned to the Mid-Value / Customer Service queue. The Case ID is written back into the SFMC Data Extension, and the donor is suppressed from SMS journeys, promotional messaging and any overlapping automation paths.</p>
+          </Card>
+          <Card kicker="04 · Back-to-back donations" title="Case-based de-duplication for repeat gifts">
+            <p>Real donor behaviour isn't linear. If a donor gives $300 then $1,200 two days later, the system checks for an active Case ID created within the last X days. If yes, no new case is created, the existing case is updated with the latest donation and activity history is appended in Salesforce. If no, a new Case is created and the donor enters the Mid-Value flow. This prevents duplication and keeps team workload clean.</p>
+          </Card>
+          <Card kicker="05 · Call outcome capture" title="Salesforce → SFMC sync of standardised outcomes">
+            <p>After a call is made, agents update Call Result in Salesforce using standardised outcomes: Reached, Not Reached, Saved (engaged positively), or Declined. These results sync back into SFMC via Data Extensions and trigger dynamic follow-up paths.</p>
+          </Card>
+          <Card kicker="06 · Dynamic follow-up paths" title="The right next step for every outcome">
+            <ul className="space-y-3 mt-1">
+              <li><strong className="text-charcoal">Not Reached</strong> · 24–48 hour wait, personalised SMS follow-up, re-attempt call task created in queue, donor stays in Mid-Value pipeline.</li>
+              <li><strong className="text-charcoal">Reached</strong> · stop further call attempts, trigger gratitude email, move into stewardship journey, update engagement score.</li>
+              <li><strong className="text-charcoal">Saved</strong> · immediate thank-you email, reinforce impact of the gift, optionally introduce deeper Mid-Value storytelling journey.</li>
+              <li><strong className="text-charcoal">Declined</strong> · mark preference in CRM, suppress from Mid-Value outreach for a cooling period, move into long-term reactivation segment.</li>
+            </ul>
+          </Card>
+        </div>
+      </Section>
+
+      <Section eyebrow="Step 0 · Business logic" title="Before journey entry" desc="Ensure every $1,000+ donor is identified in real time and moved from automation to human stewardship without delay.">
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="rounded-xl border border-primary/40 bg-primary/5 p-6">
+            <p className="text-[10.5px] font-bold tracking-[2px] uppercase text-primary mb-3">Entry conditions</p>
+            <ul className="space-y-2 text-sm text-charcoal/80">
+              <li>· Last Gift Amount ≥ $1,000</li>
+              <li>· Most recent transaction detected</li>
+              <li>· Active journey participant (SMS or lifecycle flow)</li>
+            </ul>
+          </div>
+          <div className="rounded-xl border border-black/10 bg-white p-6">
+            <p className="text-[10.5px] font-bold tracking-[2px] uppercase text-muted-foreground mb-3">Success metrics</p>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>· Time to first human contact</li>
+              <li>· Case creation accuracy</li>
+              <li>· Reduction in duplicate outreach</li>
+              <li>· Mid-Value conversion rate</li>
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      <Section eyebrow="Step 1 · Data Extensions" title="Core architecture across SFMC + Salesforce">
         <div className="space-y-8">
           {[
-            { name: "Donor_Master_DE", role: "Source of truth, donor profile + lifecycle flags", rows: masterFields },
-            { name: "Donation_Staging_DE", role: "Receives raw donation rows from CRM extract or real-time API", rows: stagingFields },
-            { name: "MidValue_Call_Queue_DE", role: "The phone-task queue the Mid-Value team works from", rows: queueFields },
+            { name: "New_Gifts_DE", role: "Entry source for every donation event", rows: newGiftsFields },
+            { name: "Phone_Queue_DE", role: "Mid-Value call tasks worked by the team", rows: phoneQueueFields },
+            { name: "Call_Result_DE", role: "Sync layer between Salesforce and SFMC", rows: callResultFields },
           ].map((de) => (
             <div key={de.name} className="rounded-xl border border-black/8 bg-white overflow-hidden">
               <div className="px-4 py-3 bg-primary-light/60 border-b border-black/5">
@@ -122,167 +193,91 @@ function Challenge2() {
         </div>
       </Section>
 
-      <Section eyebrow="Step 1 · Automation Studio" title="Ingest the donation, then run the $1,000 rule engine in SQL" desc="One Automation, four SQL Query activities, this is where the actual logic lives.">
-        <div className="space-y-5">
-          <Card kicker="Import Activity" title="Land raw gifts in staging">
-            <p>SFTP/CRM file import (or API ingestion for real-time) → target = <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">Donation_Staging_DE</code>. <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">TransactionID</code> as PK guarantees idempotency.</p>
+      <Section eyebrow="Step 2 · Journey Builder logic" title="Decision Split + suppression at the door">
+        <div className="space-y-4">
+          <Card kicker="Entry" title="From New_Gifts_DE">
+            <p>Every new or updated gift event enters the journey directly from New_Gifts_DE.</p>
           </Card>
-
-          <SqlBlock
-            title="Query 1 · Update donor master with latest gift"
-            sql={`SELECT
-    d.ContactID,
-    d.GiftAmount AS LastGiftAmount,
-    d.GiftDate  AS LastGiftDate
-FROM Donation_Staging_DE d`}
-            target="Donor_Master_DE (Update)"
-          />
-          <SqlBlock
-            title="Query 2 · Identify high-value donors (≥ $1,000)"
-            sql={`SELECT
-    ContactID,
-    GiftAmount AS LastGiftAmount,
-    GiftDate   AS LastGiftDate
-FROM Donation_Staging_DE
-WHERE GiftAmount >= 1000
-  AND GiftDate >= DATEADD(day, -1, GETDATE())`}
-            target="High_Value_Donor_DE (Overwrite)"
-          />
-          <SqlBlock
-            title="Query 3 · Build the Mid-Value phone queue"
-            sql={`SELECT
-    m.ContactID,
-    m.FirstName + ' ' + m.LastName AS Name,
-    m.Mobile        AS Phone,
-    d.GiftAmount,
-    d.GiftDate,
-    'High Priority' AS PriorityLevel,
-    'New'           AS Status,
-    GETDATE()       AS CreatedDate
-FROM Donor_Master_DE m
-JOIN Donation_Staging_DE d
-  ON m.ContactID = d.ContactID
-WHERE d.GiftAmount >= 1000`}
-            target="MidValue_Call_Queue_DE (Update, ContactID PK dedupes)"
-          />
-          <SqlBlock
-            title="Query 4 · Flag the donor so Journey Builder can react"
-            sql={`SELECT
-    m.ContactID,
-    1 AS MidValueFlag,
-    0 AS SMS_Eligible
-FROM Donor_Master_DE m
-JOIN Donation_Staging_DE d
-  ON m.ContactID = d.ContactID
-WHERE d.GiftAmount >= 1000`}
-            target="Donor_Master_DE (Update)"
-          />
-        </div>
-      </Section>
-
-      <Section eyebrow="Step 2 · Journey entry source" title="Donor_Master_DE drives the lifecycle journey">
-        <Card kicker="Entry source" title="Donor_Master_DE">
-          <p>Schedule: re-evaluate daily (or near real-time if the org is on the streaming setup). Entry criteria = <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">SMS_Eligible = 1</code> so anyone we just flagged Mid-Value is excluded at the door.</p>
-        </Card>
-      </Section>
-
-      <Section eyebrow="Step 3 · Decision Split" title="The first thing every contact hits inside the journey">
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="rounded-xl border border-primary/40 bg-primary/5 p-6">
-            <p className="text-[10.5px] font-bold tracking-[2px] uppercase text-primary mb-2">Condition A · High value</p>
-            <p className="font-display font-extrabold text-charcoal text-lg mb-1">LastGiftAmount ≥ 1000</p>
-            <p className="text-sm text-muted-foreground">Routes to the High Value path (Step 4).</p>
-          </div>
-          <div className="rounded-xl border border-black/10 bg-white p-6">
-            <p className="text-[10.5px] font-bold tracking-[2px] uppercase text-muted-foreground mb-2">Condition B · Standard</p>
-            <p className="font-display font-extrabold text-charcoal text-lg mb-1">LastGiftAmount &lt; 1000</p>
-            <p className="text-sm text-muted-foreground">Continues the normal SMS lifecycle (Step 5).</p>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="rounded-xl border border-primary/40 bg-primary/5 p-6">
+              <p className="text-[10.5px] font-bold tracking-[2px] uppercase text-primary mb-2">Condition A · High value</p>
+              <p className="font-display font-extrabold text-charcoal text-lg mb-1">LastGiftAmount ≥ $1,000</p>
+              <p className="text-sm text-muted-foreground">Routes to the Mid-Value path. Exits all SMS sends immediately and triggers Salesforce Case creation. Case ID is returned and stored in SFMC.</p>
+            </div>
+            <div className="rounded-xl border border-black/10 bg-white p-6">
+              <p className="text-[10.5px] font-bold tracking-[2px] uppercase text-muted-foreground mb-2">Condition B · Standard</p>
+              <p className="font-display font-extrabold text-charcoal text-lg mb-1">LastGiftAmount &lt; $1,000</p>
+              <p className="text-sm text-muted-foreground">Continues the standard lifecycle SMS journey unchanged.</p>
+            </div>
           </div>
         </div>
       </Section>
 
       <section className="bg-periwinkle text-charcoal">
         <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-[8vw] py-12 sm:py-16 md:py-20 border-t border-black/5">
-          <p className="text-[13.5px] font-bold tracking-[3px] uppercase mb-2 text-primary">Step 4 · High value path</p>
-          <h2 className="font-display font-black text-2xl md:text-3xl mb-8">Activities, in this exact order</h2>
-          <ol className="space-y-4 max-w-3xl">
+          <p className="text-[13.5px] font-bold tracking-[3px] uppercase mb-2 text-primary">Step 3 · Mid-Value engagement flow</p>
+          <h2 className="font-display font-black text-2xl md:text-3xl mb-8">Trigger → Case creation → Phone task → Call attempt</h2>
+          <div className="grid md:grid-cols-3 gap-4">
             {[
-              { t: "Update Contact / Data Extension Update", d: "Set MidValueFlag = 1 and SMS_Eligible = 0 on Donor_Master_DE. This is what stops every future SMS send." },
-              { t: "Data Extension Entry Activity → MidValue_Call_Queue_DE", d: "Inserts the row that becomes the phone task. ContactID is the PK so duplicate $1k gifts can't create duplicate tasks." },
-              { t: "Send Email, internal alert to the Mid-Value team", d: "Includes Name, Phone, GiftAmount, GiftDate. Triggers immediate human action, a second channel in case the queue isn't being watched." },
-              { t: "Exit Criteria / End Journey activity", d: "Hard exit so the lifecycle automation can never speak to this donor again from inside this journey." },
+              { t: "SMS fallback", d: "Used only if the donor was Not Reached. Human in tone, no automation overload, designed to re-open the conversation, not replace it." },
+              { t: "Email gratitude", d: "Triggered only after a Reached or Saved outcome. Focused on appreciation and reinforcing the impact of the gift." },
+              { t: "Stewardship handover", d: "Reached or Saved donors are moved into a longer Mid-Value stewardship journey. Declined donors enter a cooling period and a long-term reactivation segment." },
             ].map((s) => (
-              <li key={s.t} className="rounded-xl border border-primary/40 bg-white/70 backdrop-blur p-5">
+              <div key={s.t} className="rounded-xl border border-primary/40 bg-white/70 backdrop-blur p-5">
                 <h3 className="font-display font-extrabold text-charcoal mb-1">{s.t}</h3>
                 <p className="text-sm text-charcoal/75 leading-relaxed">{s.d}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <Section eyebrow="Step 5 · Low value path" title="Donors under $1,000 stay in the lifecycle">
-        <Card kicker="Standard SMS lifecycle" title="Thank you → Impact story → Engagement nudge → Upgrade prompt">
-          <p>Same content cadence as today. The Decision Split is invisible to them, they just keep getting the journey they were already on.</p>
-        </Card>
-      </Section>
-
-      <Section eyebrow="Step 6 · Global SMS safety net" title="Suppression layer outside the journey, in case anything slips through" desc="A belt-and-braces guard so an off-journey send file can never accidentally text a Mid-Value donor.">
-        <div className="space-y-4">
-          <Card kicker="Create" title="SMS_Suppression_DE">
-            <p>Populated by an automation that runs hourly and selects every contact where <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">MidValueFlag = 1</code> OR <code className="bg-muted px-1.5 py-0.5 rounded text-primary-dark">SMS_Eligible = 0</code>.</p>
-          </Card>
-          <Card kicker="Apply" title="Add as Exclusion DE on every SMS send definition">
-            <p>Mid-Value donors are excluded at send time even if a campaign manager builds an ad-hoc audience. Defence in depth.</p>
-          </Card>
-        </div>
-      </Section>
-
-      <Section eyebrow="Step 7 · De-dupe the queue" title="ContactID as Primary Key on MidValue_Call_Queue_DE">
-        <Card kicker="Why" title="Two $1,000 gifts in one day = one phone task, not two">
-          <p>The Update target on Query 3 plus a PK on ContactID means the second gift updates the existing row (latest amount + date) instead of inserting a duplicate. The Mid-Value team gets one consolidated task.</p>
-        </Card>
-      </Section>
-
-      <Section eyebrow="Step 8 · Monitoring & reporting" title="MidValue_Tracking_DE, so we can prove this is working">
-        <Card kicker="Log" title="Entry time · Call outcome · Conversion · Time-to-call">
-          <p>Populated by a nightly Automation Studio job. Feeds a simple dashboard (Datorama / Tableau / Looker, whichever the org uses) so we can show the panel: median time-to-first-call, % of $1k gifts contacted within 48 hours, and downgrade/cancel rates after the call.</p>
-        </Card>
-      </Section>
-
-      <section className="bg-periwinkle text-charcoal">
-        <div className="max-w-[1400px] mx-auto px-5 sm:px-6 md:px-[8vw] py-12 sm:py-16 md:py-20 border-t border-black/5">
-          <p className="text-[13.5px] font-bold tracking-[3px] uppercase mb-2 text-primary">Test cases</p>
-          <h2 className="font-display font-black text-2xl md:text-3xl mb-8">What I'd run before go-live</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { case: "Case 1 · Gift = $50", expected: "Stays in SMS journey. No flag, no queue row." },
-              { case: "Case 2 · Gift = $999", expected: "Stays in SMS journey. Boundary check, exclusive of $1,000." },
-              { case: "Case 3 · Gift = $1,000", expected: "Exits SMS, MidValueFlag = 1, queue row created, team notified." },
-              { case: "Case 4 · Two $1,000 gifts same day", expected: "Exactly one queue row. Update via PK on ContactID, no duplicate phone task." },
-            ].map((c) => (
-              <div key={c.case} className="rounded-xl border border-primary/40 bg-white/70 backdrop-blur p-5">
-                <p className="font-display font-extrabold text-primary mb-1">{c.case}</p>
-                <p className="text-sm text-charcoal/75">{c.expected}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <SiteFooter />
-    </div>
-  );
-}
+      <Section eyebrow="Step 4 · Measurement" title="KPIs and A/B tests we'd run">
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="rounded-xl border border-black/10 bg-white p-6">
+            <p className="text-[10.5px] font-bold tracking-[2px] uppercase text-primary mb-3">KPIs</p>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>· Time from $1,000 gift to first contact</li>
+              <li>· Case creation success rate</li>
+              <li>· Call reach rate</li>
+              <li>· SMS fallback engagement</li>
+              <li>· Saved vs Declined ratio</li>
+              <li>· Mid-Value conversion rate</li>
+              <li>· Duplicate case prevention rate</li>
+            </ul>
+          </div>
+          <div className="rounded-xl border border-black/10 bg-white p-6">
+            <p className="text-[10.5px] font-bold tracking-[2px] uppercase text-primary mb-3">A/B tests</p>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>· Immediate call vs 2-hour delay</li>
+              <li>· SMS tone, formal vs conversational</li>
+              <li>· Email gratitude depth, short vs storytelling</li>
+              <li>· Case priority logic thresholds</li>
+            </ul>
+          </div>
+        </div>
+      </Section>
 
-function SqlBlock({ title, sql, target }: { title: string; sql: string; target: string }) {
-  return (
-    <div className="rounded-xl border border-black/8 bg-white overflow-hidden">
-      <div className="px-4 py-3 border-b border-black/5 bg-muted/40">
-        <p className="font-display font-extrabold text-charcoal">{title}</p>
-        <p className="text-xs text-muted-foreground mt-0.5">Target → <span className="font-mono text-primary-dark">{target}</span></p>
-      </div>
-      <pre className="px-4 py-4 text-xs leading-relaxed overflow-x-auto bg-periwinkle text-charcoal font-mono">{sql}</pre>
+      <Section eyebrow="Why this works" title="High-value donors don't want more automation, they want recognition">
+        <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mb-6">This system works because it:</p>
+        <ul className="space-y-2 max-w-3xl text-base text-muted-foreground leading-relaxed mb-8">
+          <li>· Removes automation immediately at the right threshold</li>
+          <li>· Ensures every high-value donor gets a human touchpoint</li>
+          <li>· Keeps Salesforce and SFMC fully synchronised</li>
+          <li>· Prevents duplicate outreach through case-based logic</li>
+          <li>· Creates structured, measurable Mid-Value engagement</li>
+        </ul>
+        <p className="text-[10.5px] font-bold tracking-[2px] uppercase text-primary mb-3">Impact</p>
+        <ul className="space-y-2 max-w-3xl text-base text-muted-foreground leading-relaxed">
+          <li>· Faster human response time for high-value donors</li>
+          <li>· Cleaner CRM data and fewer duplicate outreach issues</li>
+          <li>· Higher donor satisfaction during critical giving moments</li>
+          <li>· Improved Mid-Value conversion and stewardship outcomes</li>
+          <li>· Strong alignment between marketing automation and fundraising teams</li>
+        </ul>
+      </Section>
+
+      <SiteFooter />
     </div>
   );
 }
