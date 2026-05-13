@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import logo from "@/assets/orange-sky-logo.png";
+import team from "@/assets/orange-sky-team.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,42 +25,122 @@ function Index() {
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
 
-      <section className="relative overflow-hidden bg-primary text-white px-6 md:px-[8vw] py-24 md:py-32">
+      <section className="relative overflow-hidden bg-primary text-white px-6 md:px-[8vw] py-20 md:py-28">
         <div className="absolute inset-0 pointer-events-none">
-          <span className="absolute rounded-full border border-white/15" style={{ width: 600, height: 600, top: -200, right: -120 }} />
-          <span className="absolute rounded-full border border-white/15" style={{ width: 360, height: 360, top: -40, right: 160 }} />
-          <span className="absolute rounded-full border border-white/10" style={{ width: 800, height: 800, bottom: -350, right: -240 }} />
-          <span className="absolute rounded-full border border-white/10" style={{ width: 220, height: 220, bottom: 80, left: 80 }} />
+          <span className="absolute bg-white/10 animate-blob" style={{ width: 520, height: 520, top: -160, right: -120 }} />
+          <span className="absolute bg-white/10 animate-blob" style={{ width: 360, height: 360, bottom: -160, left: -100, animationDelay: "2s" }} />
+          <span className="absolute rounded-full border-2 border-dashed border-white/20" style={{ width: 180, height: 180, top: 60, left: "42%" }} />
+          <div className="absolute inset-0 opacity-[0.12]" style={{ backgroundImage: "radial-gradient(white 1.2px, transparent 1.2px)", backgroundSize: "22px 22px" }} />
         </div>
-        <div className="relative inline-flex items-center gap-3 bg-white rounded-md px-4 py-2 mb-6 shadow-sm">
-          <img src={logo} alt="Orange Sky" className="h-8 w-auto" />
-        </div>
-        <p className="relative text-[11px] font-semibold tracking-[3px] uppercase text-white/70 mb-6">Salesforce Marketing Cloud · Panel Presentation</p>
-        <h1 className="relative font-display font-black text-5xl md:text-7xl leading-[1.02] max-w-4xl">
-          Presented by
-          <span className="block text-white/75 font-bold">Sravani Badana.</span>
-        </h1>
-        <p className="relative text-white/85 text-lg max-w-xl leading-relaxed mt-6">
-          A walk-through of how I'd approach four real Orange Sky problems, from retention automation to the values that hold it all together.
-        </p>
-        <div className="relative mt-10 flex gap-3">
-          <Link to="/challenge-1" className="bg-white text-primary font-bold text-sm uppercase tracking-wider px-6 py-3 rounded-md hover:bg-primary-light transition">Start with Challenge 01</Link>
+
+        <div className="relative grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
+          <div>
+            <div className="inline-flex items-center gap-3 bg-white rounded-full pl-2 pr-5 py-2 mb-6 shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+              <span className="bg-primary-light rounded-full p-1.5">
+                <img src={logo} alt="Orange Sky" className="h-6 w-auto" />
+              </span>
+              <span className="text-[11px] font-extrabold tracking-[2.5px] uppercase text-charcoal">Panel Presentation</span>
+            </div>
+
+            <p className="text-[11px] font-bold tracking-[3px] uppercase text-white/75 mb-4">Salesforce Marketing Cloud · 2026</p>
+            <h1 className="font-display font-black text-5xl md:text-7xl leading-[0.98]">
+              Presented by
+              <span className="block mt-3">
+                <span className="relative inline-block">
+                  <span className="absolute -inset-x-3 inset-y-2 bg-charcoal/90 -rotate-1 rounded-lg" aria-hidden />
+                  <span className="relative text-white px-3">Sravani Badana</span>
+                </span>
+              </span>
+            </h1>
+            <p className="text-white/90 text-lg max-w-xl leading-relaxed mt-7">
+              A walk-through of how I'd approach four real Orange Sky problems, from retention automation to the values that hold it all together.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link to="/challenge-1" className="bg-white text-primary font-extrabold text-sm uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-primary-light transition shadow-[0_10px_30px_rgba(0,0,0,0.18)] hover:-translate-y-0.5">
+                Start with Challenge 01 →
+              </Link>
+              <Link to="/challenge-4" className="bg-transparent border-2 border-white/70 text-white font-extrabold text-sm uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-white hover:text-primary transition">
+                Skip to Values
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative h-[480px] hidden lg:block">
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary-dark/50 to-transparent rounded-[3rem] blur-2xl" />
+
+            <div
+              className="absolute top-6 left-4 right-4 rounded-3xl overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.35)] ring-8 ring-white animate-float"
+              style={{ ["--r" as never]: "-3deg", transform: "rotate(-3deg)" }}
+            >
+              <img src={team} alt="Orange Sky volunteers cheering at a community event" className="w-full h-[360px] object-cover" />
+              <div className="bg-white px-5 py-3 flex items-center justify-between">
+                <span className="font-display font-black text-charcoal text-sm">Team Orange Sky</span>
+                <span className="text-[10px] font-bold tracking-[2px] uppercase text-primary">Positively Connecting Communities</span>
+              </div>
+            </div>
+
+            <div
+              className="absolute -top-2 -right-2 bg-white text-charcoal rounded-2xl px-4 py-3 shadow-xl animate-wiggle"
+              style={{ transform: "rotate(8deg)" }}
+            >
+              <div className="text-[10px] font-bold tracking-[2px] uppercase text-primary">Live</div>
+              <div className="font-display font-black text-base leading-none mt-1">High-fives ✋</div>
+            </div>
+
+            <div
+              className="absolute -bottom-4 -left-2 bg-charcoal text-white rounded-2xl px-5 py-4 shadow-xl animate-float"
+              style={{ ["--r" as never]: "-6deg", transform: "rotate(-6deg)", animationDelay: "1.2s" }}
+            >
+              <div className="font-display font-black text-3xl leading-none">04</div>
+              <div className="text-[10px] font-bold tracking-[2px] uppercase text-white/70 mt-1">Challenges Inside</div>
+            </div>
+
+            <div className="absolute bottom-12 right-0 w-16 h-16 rounded-full bg-primary-light shadow-lg" />
+          </div>
         </div>
       </section>
 
-      <section className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-20 grid md:grid-cols-2 gap-6">
-        {challenges.map((c) => (
-          <Link key={c.num} to={c.to} className="group bg-white rounded-xl border border-black/8 p-8 relative overflow-hidden hover:-translate-y-1 hover:shadow-[0_20px_56px_rgba(249,106,0,0.15)] hover:border-primary-mid transition-all">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-primary" />
-            <div className="flex items-baseline gap-4 mb-4">
-              <span className="font-display font-black text-primary text-4xl">{c.num}</span>
-              <span className="text-[10.5px] font-bold tracking-[2px] uppercase text-muted-foreground">{c.tag}</span>
-            </div>
-            <h2 className="font-display font-extrabold text-2xl text-charcoal mb-3 group-hover:text-primary transition-colors">{c.title}</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
-            <p className="mt-6 text-[11px] font-bold uppercase tracking-[2px] text-primary">Open challenge →</p>
-          </Link>
-        ))}
+      <div className="bg-primary -mt-px">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full h-12 block fill-background">
+          <path d="M0,30 C180,60 360,0 540,30 C720,60 900,0 1080,30 C1260,60 1380,15 1440,30 L1440,60 L0,60 Z" />
+        </svg>
+      </div>
+
+      <section className="max-w-[1400px] mx-auto px-6 md:px-[8vw] py-20">
+        <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+          <div>
+            <p className="text-[11px] font-extrabold tracking-[3px] uppercase text-primary mb-2">The Brief</p>
+            <h2 className="font-display font-black text-3xl md:text-4xl text-charcoal">Four challenges, picked apart with care.</h2>
+          </div>
+          <p className="text-sm text-muted-foreground max-w-sm">Click any card to dive in. Each challenge has its own data model, journey logic and reflection.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {challenges.map((c) => (
+            <Link
+              key={c.num}
+              to={c.to}
+              className="group bg-white rounded-3xl border border-black/8 p-8 relative overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_24px_64px_rgba(249,106,0,0.18)] hover:border-primary-mid transition-all"
+            >
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-light rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-primary-mid to-primary" />
+              <div className="relative flex items-baseline gap-4 mb-4">
+                <span
+                  className="font-display font-black text-primary text-5xl group-hover:rotate-[-6deg] transition-transform inline-block"
+                  style={{ textShadow: "3px 3px 0 var(--primary-light)" }}
+                >
+                  {c.num}
+                </span>
+                <span className="text-[10.5px] font-extrabold tracking-[2px] uppercase text-muted-foreground">{c.tag}</span>
+              </div>
+              <h2 className="relative font-display font-extrabold text-2xl text-charcoal mb-3 group-hover:text-primary transition-colors">{c.title}</h2>
+              <p className="relative text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+              <p className="relative mt-6 text-[11px] font-extrabold uppercase tracking-[2px] text-primary inline-flex items-center gap-1 group-hover:gap-3 transition-all">
+                Open challenge <span>→</span>
+              </p>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <SiteFooter />
