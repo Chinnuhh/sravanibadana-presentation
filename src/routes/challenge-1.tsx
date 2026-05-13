@@ -125,6 +125,27 @@ function Challenge1() {
         </div>
       </Section>
 
+      <Section eyebrow="How I'd build it" title="Six steps from data signal to a save journey that ships">
+        <ol className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 counter-reset-build">
+          {[
+            { title: "Diagnose first", body: "Pull 12 months of cancellations, segment by gift number, channel, amount and reason. Confirm the 'gift #3' pattern and find any sub-segments hiding in it." },
+            { title: "Map the journey on a wall", body: "Co-design with Supporter Care, Fundraising and Data. One sticky note per touchpoint. Agree the goal: save, not pressure." },
+            { title: "Build in CRM", body: "Create a Save Journey audience triggered by cancel intent or risk score. Wire email and SMS nodes, decision splits on engagement (opened, clicked, replied), and a phone task queue for Supporter Care." },
+            { title: "Suppress and protect brand", body: "Hard suppression from appeals, regular acquisition and bulk SMS while a donor is in journey." },
+            { title: "Test small, then scale", body: "A/B subject lines and the pause vs reduce offer on a 20% holdout. Hold a control group to measure true save uplift, not just journey volume." },
+            { title: "Measure what matters", body: "Save rate, downgrade vs full cancel, 6-month LTV vs control, qualitative reasons captured. Report monthly to the wider team." },
+          ].map((step, i) => (
+            <li key={step.title} className="relative bg-white rounded-2xl border border-black/8 p-6 hover:border-primary/40 hover:-translate-y-1 transition-all shadow-[0_2px_0_rgba(0,0,0,0.02)] hover:shadow-[0_15px_40px_-15px_rgba(255,107,0,0.35)]">
+              <div className="flex items-start gap-4 mb-3">
+                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white font-display font-black text-lg flex items-center justify-center">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="font-display font-extrabold text-lg text-charcoal pt-1.5">{step.title}</h3>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">{step.body}</p>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
       <Section eyebrow="The save journey, at a glance" title="Cancellation risk spikes after the third gift" desc="The honeymoon is over and the donor is asking, 'is this still worth it?'. The save journey has to answer that question with story, gratitude and a frictionless way to stay.">
         <ol className="relative border-l-2 border-primary/30 ml-3 space-y-6">
           {[
