@@ -3,6 +3,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { ChallengeHero } from "@/components/ChallengeHero";
 import vanSticker from "@/assets/orange-sky-van-sticker.webp";
 import journeyImage from "@/assets/challenge-3-journey.png";
+import automationImage from "@/assets/challenge-3-automation.png";
 import { Section, Card } from "@/components/Section";
 
 export const Route = createFileRoute("/challenge-3")({
@@ -130,6 +131,17 @@ function Challenge3() {
           </ul>
           <p>Keeping reporting within Automation Studio allows the communication journeys to stay streamlined, while reporting and data processing run efficiently in the background on a scheduled cadence.</p>
         </div>
+        <figure className="mt-8 overflow-hidden rounded-xl border border-black/10 bg-white shadow-sm">
+          <img
+            src={automationImage}
+            alt="Salesforce Marketing Cloud Automation Studio scheduled reporting workflow: data extract, SQL query, data aggregation, report generation, finance and partner emails, CSV file transfer."
+            className="w-full h-auto"
+            loading="lazy"
+          />
+          <figcaption className="px-5 py-3 text-xs text-muted-foreground border-t border-black/5">
+            Automation Studio scheduled flow: Data Extract → SQL Query → Data Aggregation → Report Generation → Finance Summary Email → Partner Impact Report → CSV File Transfer.
+          </figcaption>
+        </figure>
       </Section>
 
       <Section eyebrow="Reporting layer" title="Reporting layer" desc="Two distinct reporting outputs serving different audiences from the same source of truth.">
