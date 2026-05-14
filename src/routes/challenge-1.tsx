@@ -106,14 +106,7 @@ function Challenge1() {
       <Section eyebrow="Why this journey exists" title="The third-gift cliff is an emotional one, not a transactional one">
         <div className="max-w-3xl space-y-5">
           <p className="text-base text-muted-foreground leading-relaxed">
-            Our data shows cancellations spike after the third regular gift. That pattern usually points to three things: a
-            <strong className="text-charcoal"> drop in emotional connection</strong>, a
-            <strong className="text-charcoal"> lack of perceived impact</strong>, or
-            <strong className="text-charcoal"> donor fatigue</strong>, rarely a pure financial decision.
-          </p>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            The save journey is designed to intervene <em>before</em> a cancellation is finalised, combining email, SMS and a
-            human phone call with progressive escalation. Every stage is built around <strong className="text-charcoal">re-engagement, emotional reinforcement, and offering an alternative to leaving</strong>.
+            Our data shows cancellations increase after the third regular gift. When I looked at this challenge, I felt it wasn't just about money, many donors still care about the cause but may feel disconnected from the impact or overwhelmed by life. So instead of building a journey that pushes people to stay, I designed one that reconnects them through <strong className="text-charcoal">gratitude, impact stories, flexibility, and human support</strong> when needed. The goal was to make the experience feel supportive, respectful, and positive, regardless of the outcome.
           </p>
         </div>
       </Section>
