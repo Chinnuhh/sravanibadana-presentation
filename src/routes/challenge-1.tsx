@@ -125,7 +125,7 @@ function Challenge1() {
           <Card title="Increase donor lifetime value">Offer pause / reduce / re-frequency so the relationship survives a tough month.</Card>
           <Card title="Identify at-risk donors earlier">Identifying risk earlier means the experience feels supportive rather than reactive.</Card>
           <Card title="Personalise the experience">Make communication more relevant by responding to behaviour, preferences, and the context behind a cancellation.</Card>
-          <Card title="Protect long-term brand trust">Even cancellations exit gracefully, preserving future re-engagement.</Card>
+          <Card title="Protect long-term brand trust">I wanted to make sure even if someone does leave, it still feels respectful. Because that trust matters long-term, even beyond a single donation cycle.</Card>
         </div>
       </Section>
 
