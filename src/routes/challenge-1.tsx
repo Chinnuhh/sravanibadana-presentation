@@ -349,7 +349,7 @@ WHERE m.TotalGifts >= 3
       <Section eyebrow="Why this works" title="Save journeys lose when they sound like sales">
         <div className="grid lg:grid-cols-5 gap-8 items-start">
           <p className="lg:col-span-3 text-base text-muted-foreground leading-relaxed">
-            Donors at gift #3 don't need a discount, they need to feel seen. Email opens with gratitude, SMS proves impact in 30 seconds, and the phone call is a real conversation, not a script. That's an Orange Sky save journey: built around the donor's life, not our funnel.
+            At the third-gift stage, donors don’t need pressure to stay, they need reassurance that their support still matters, so the journey is designed to lead with gratitude, reinforce impact, and only transition into human outreach when it adds genuine value, creating an experience that feels supportive and respectful regardless of the outcome.
           </p>
           <div className="lg:col-span-2 grid grid-cols-3 gap-3">
             {[
