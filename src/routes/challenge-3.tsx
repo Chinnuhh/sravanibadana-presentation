@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/SiteHeader";
 import { ChallengeHero } from "@/components/ChallengeHero";
 import vanSticker from "@/assets/orange-sky-van-sticker.webp";
+import journeyImage from "@/assets/challenge-3-journey.png";
 import { Section, Card } from "@/components/Section";
 
 export const Route = createFileRoute("/challenge-3")({
@@ -87,6 +88,20 @@ function Challenge3() {
           ))}
         </div>
         <p className="text-sm text-muted-foreground mt-6">This structure ensures both <strong>real-time triggers</strong> (thank you on confirmed donation event) and <strong>batch reporting</strong> (Finance reconciliation + corporate partner reporting) are served from the same source of truth.</p>
+      </Section>
+
+      <Section eyebrow="Reference build" title="Journey Builder mock-up, Corporate Payroll Giving — Employee Thank You Journey" desc="Immediate thank-you on first confirmed payroll gift, ongoing co-branded impact updates, milestone recognition at 6 and 12 months and anniversaries, and a graceful exit when employment or donations end.">
+        <figure className="rounded-xl border border-black/8 bg-white overflow-hidden shadow-sm">
+          <img
+            src={journeyImage}
+            alt="Salesforce Marketing Cloud Journey Builder showing the Corporate Payroll Giving Employee Thank You Journey: entry from the Payroll Donations data extension on a new confirmed donation, immediate thank-you email, wait one day, co-branded welcome and impact overview, monthly impact updates, milestone check branching to 6-month, 12-month and anniversary thank-you emails, and a decision split for donation stop or employment end leading to a final acknowledgement and exit."
+            className="w-full h-auto block"
+            loading="lazy"
+          />
+          <figcaption className="px-5 py-3 text-xs text-muted-foreground border-t border-black/5">
+            Entry Source <code className="text-primary-dark">DE_Payroll_Donations</code> → Immediate Thank You Email → Wait 1 Day → Welcome &amp; Impact Overview (co-branded) → Monthly Impact Update → Milestone Check → 6/12-month + Anniversary Thank-You Emails → Decision Split on donation stop or employment end → Final Acknowledgement Email → Exit Journey.
+          </figcaption>
+        </figure>
       </Section>
 
       <Section eyebrow="Journey logic" title="Journey logic (high level)" desc="Triggered when a payroll donation is ingested into SFMC.">
