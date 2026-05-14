@@ -120,7 +120,7 @@ function Challenge1() {
 
       <Section eyebrow="Objectives" title="What success looks like">
         <div className="grid md:grid-cols-3 gap-5">
-          <Card title="Reduce cancellations">by reaching people at a meaningful moment, right after that third gift, when they might be reconsidering their connection.</Card>
+          <Card title="Reduce cancellations">By reaching people at a meaningful moment, right after that third gift, when they might be reconsidering their connection.</Card>
           <Card title="Rebuild emotional connection">Re-anchor donors to the mission with stories, impact metrics and gratitude.</Card>
           <Card title="Increase donor lifetime value">Offer pause / reduce / re-frequency so the relationship survives a tough month.</Card>
           <Card title="Identify at-risk donors earlier">Move from reactive saves to a predictive donor health score.</Card>
