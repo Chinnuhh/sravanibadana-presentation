@@ -117,6 +117,21 @@ function Challenge3() {
         </div>
       </Section>
 
+      <Section eyebrow="Automation Studio" title="Automated reporting workflow" desc="While Journey Builder manages the employee thank-you and engagement experience, Automation Studio supports the reporting and operational side of the process.">
+        <div className="space-y-4 text-sm text-muted-foreground leading-relaxed max-w-3xl">
+          <p>Using scheduled automations within SFMC, the system can:</p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Retrieve payroll donation data from synced data extensions</li>
+            <li>Process reporting metrics through SQL queries</li>
+            <li>Calculate donation totals, participation rates, and impact metrics</li>
+            <li>Generate monthly or quarterly reporting files automatically</li>
+            <li>Send summary reports to internal finance teams and corporate partner stakeholders</li>
+            <li>Export CSV files where reconciliation or external reporting is required</li>
+          </ul>
+          <p>Keeping reporting within Automation Studio allows the communication journeys to stay streamlined, while reporting and data processing run efficiently in the background on a scheduled cadence.</p>
+        </div>
+      </Section>
+
       <Section eyebrow="Reporting layer" title="Reporting layer" desc="Two distinct reporting outputs serving different audiences from the same source of truth.">
         <div className="grid md:grid-cols-2 gap-4">
           <Card kicker="Output 01" title="Finance reporting">
