@@ -124,7 +124,7 @@ function Challenge1() {
           <Card title="Rebuild emotional connection">I didn’t want the journey to just be functional; I wanted it to remind people of the impact they have already had.</Card>
           <Card title="Increase donor lifetime value">Offer pause / reduce / re-frequency so the relationship survives a tough month.</Card>
           <Card title="Identify at-risk donors earlier">Identifying risk earlier means the experience feels supportive rather than reactive.</Card>
-          <Card title="Personalise the experience">Use behaviour, channel preference and reason-for-leaving to tailor every touch.</Card>
+          <Card title="Personalise the experience">Make communication more relevant by responding to behaviour, preferences, and the context behind a cancellation.</Card>
           <Card title="Protect long-term brand trust">Even cancellations exit gracefully, preserving future re-engagement.</Card>
         </div>
       </Section>
