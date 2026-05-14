@@ -150,6 +150,20 @@ function Challenge1() {
         </ol>
       </Section>
 
+      <Section eyebrow="Reference build" title="Journey Builder mock-up, RG Save Journey, Post 3rd Gift" desc="Email-first, SMS as a 2-day fallback, phone escalation for high-value or long-term donors, and a graceful exit path for confirmed cancellations.">
+        <figure className="rounded-xl border border-black/8 bg-white overflow-hidden shadow-sm">
+          <img
+            src={journeyImage}
+            alt="Salesforce Marketing Cloud Journey Builder showing the RG Save Journey Post 3rd Gift, entry from At-Risk Donors data extension, Email 1 thank-you with impact and flexible options, a 2-day wait, decision split on engagement, an SMS fallback with a save link, a second decision split, escalation to a phone call queue for high-value donors, and exit paths for saved versus cancelled donors."
+            className="w-full h-auto block"
+            loading="lazy"
+          />
+          <figcaption className="px-5 py-3 text-xs text-muted-foreground border-t border-black/5">
+            Entry Source <code className="text-primary-dark">At_Risk_Donor_DE</code> → Email 1 (gratitude + impact + alternatives) → Wait 2 days → Decision Split on engagement → SMS fallback with save link → Decision Split → Create Task in <code className="text-primary-dark">Phone_Queue_DE</code> for high-value donors → Email 2 (final empathetic save) → Exit branches (Saved → Nurture / No response → Win-back).
+          </figcaption>
+        </figure>
+      </Section>
+
       <Section eyebrow="The save journey, at a glance" title="Cancellation risk spikes after the third gift" desc="Cancellation risk often increases after the third gift, when the initial emotional momentum starts to fade. At this point, the question in a supporter's mind is often simple: 'Is this still making a difference?' This journey is designed to respond to that moment with gratitude, clarity, and flexibility, not pressure.">
         <ol className="relative border-l-2 border-primary/30 ml-3 space-y-6">
           {[
@@ -200,20 +214,6 @@ function Challenge1() {
             </li>
           ))}
         </ol>
-      </Section>
-
-      <Section eyebrow="Reference build" title="Journey Builder mock-up, RG Save Journey, Post 3rd Gift" desc="Email-first, SMS as a 2-day fallback, phone escalation for high-value or long-term donors, and a graceful exit path for confirmed cancellations.">
-        <figure className="rounded-xl border border-black/8 bg-white overflow-hidden shadow-sm">
-          <img
-            src={journeyImage}
-            alt="Salesforce Marketing Cloud Journey Builder showing the RG Save Journey Post 3rd Gift, entry from At-Risk Donors data extension, Email 1 thank-you with impact and flexible options, a 2-day wait, decision split on engagement, an SMS fallback with a save link, a second decision split, escalation to a phone call queue for high-value donors, and exit paths for saved versus cancelled donors."
-            className="w-full h-auto block"
-            loading="lazy"
-          />
-          <figcaption className="px-5 py-3 text-xs text-muted-foreground border-t border-black/5">
-            Entry Source <code className="text-primary-dark">At_Risk_Donor_DE</code> → Email 1 (gratitude + impact + alternatives) → Wait 2 days → Decision Split on engagement → SMS fallback with save link → Decision Split → Create Task in <code className="text-primary-dark">Phone_Queue_DE</code> for high-value donors → Email 2 (final empathetic save) → Exit branches (Saved → Nurture / No response → Win-back).
-          </figcaption>
-        </figure>
       </Section>
 
       <Section eyebrow="Step 0" title="Business logic before opening SFMC">
